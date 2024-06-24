@@ -157,7 +157,7 @@ body{
 
 @media (max-width: 1193px){
   .main-content{
-    width: 60%;
+    width: 80%;
   }
   .header__navigation{
     flex-direction: column;
