@@ -154,6 +154,10 @@ body{
   display: none;
 }
 
+.content-page__links{
+  color: black;
+}
+
 
 @media (max-width: 1193px){
   .main-content{
@@ -218,7 +222,6 @@ body{
 }
 
 @media(max-width:850px){
-
   .main-content{
     width: 80%;
     min-width: 100px;
@@ -229,6 +232,7 @@ body{
   .header{
     min-width: 413px;
     flex-direction: column;
+    position: relative;
   }
   .header__title, .header__menu-button{
     margin: 0;
