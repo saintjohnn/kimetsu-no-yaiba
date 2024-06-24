@@ -55,7 +55,7 @@ body{
   color: rgb(0, 0, 0);
   position: relative;
   font-size: 1.5rem;
-  font-family: var(--lato-font);
+  font-family: 'Roadstore';
   font-weight: 700;
 }
 
@@ -172,6 +172,9 @@ body{
     right: -100%;
     /*right: 0;*/
     /*border: 1px solid black;*/
+    background-image: url('assets/images/knybackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: none;
   }
   .show-menu{
@@ -198,6 +201,13 @@ body{
     top: 0;
     right: 0;
     cursor: pointer;
+  }
+  .header__navigation-item{
+    color: rgb(109, 7, 7);
+    font-weight: 900;
+  }
+  .header__navigation-element{
+    backdrop-filter: blur(1px);
   }
   .header__menu-button{
     display: flex;
