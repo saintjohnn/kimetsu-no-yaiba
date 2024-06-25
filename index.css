@@ -3,12 +3,14 @@
 body{
   min-height: 100vh;
   min-width: 413px;
-  background-color: whitesmoke;
+  background: #202024;
+  color: rgb(214, 214, 214);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  transition: all .5s;
 }
 
 .header{
@@ -22,13 +24,11 @@ body{
   top: 0;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid gray;
+  border: 1px solid black;
 }
 
 .header--color-styles{
-  background: rgb(233, 233, 233);
-  /*color: #575151;*/
-  color: black;
+  background: inherit;
 }
 
 .header__title{
@@ -52,7 +52,7 @@ body{
 
 .header__navigation-item{
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: inherit;
   position: relative;
   font-size: 1.5rem;
   font-family: 'Roadstore';
@@ -84,7 +84,7 @@ body{
 }
 
 .header__navigation-social-media-item{
-  color: black;
+  color: inherit;
   transition: all .5s;
   font-size: 1.5rem;
 }
@@ -94,6 +94,7 @@ body{
 }
 
 .header__navigation-list:has(.header__navigation-element:hover) .header__navigation-element:not(:hover) {
+  transition: all .5s;
   opacity: .3;
 }
 
@@ -155,29 +156,33 @@ body{
 }
 
 .content-page__links{
-  color: black;
+  color: inherit;
 }
 
 .footer{
   padding: 50px;
-  margin-top: 150px;
-  background-color: rgb(236, 236, 236);
+  margin-top: 100px;
+  background-color: inherit;
   width: 100vw;
+  min-width: 413px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   font-family: 'Inter';
-  border: 1px solid gray;
+  border-top: 1px solid black;
 }
 
 .footer__informations{
-  width: 300px;
+  flex-basis: 412px;
+  max-width: 412px;
   text-align: justify;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
   margin-bottom: auto;
+  padding: 15px;
 }
 
 .footer__title{
@@ -194,14 +199,24 @@ body{
 }
 
 .footer .footer__email-link{
-  color: black;
+  color: inherit;
 }
 
 .footer__navigation .ri-linkedin-box-fill, .footer__navigation .ri-github-fill{
   font-size: 5.5rem;
 }
 
-@media (max-width: 1303px){
+.modes{
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modes--light{
+  background: whitesmoke;
+  color: black;
+}
+
+@media (max-width: 1354px){
   .main-content{
     width: 70%;
   }
@@ -211,7 +226,7 @@ body{
     width: 400px;
     height: 500px;
     padding: 30px;
-    background: #DBDADA;
+    /*background: #DBDADA;*/
     border-bottom-left-radius: 10px;
     margin-right: 0;
     top: 0;
@@ -221,7 +236,8 @@ body{
     background-image: url('assets/images/knybackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    display: none;
+    /*display: none;*/
+    transition: all .5s;
   }
   .show-menu{
     display: block;
@@ -237,7 +253,8 @@ body{
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 15px;    
+    padding: 15px;
+    color: black;    
   }
   .header__navigation-close-button{
     display: initial;
@@ -247,6 +264,7 @@ body{
     top: 0;
     right: 0;
     cursor: pointer;
+    color: black;
   }
   .header__navigation-item{
     color: rgb(109, 7, 7);
@@ -263,6 +281,18 @@ body{
   }
 }
 
+@media (max-width: 1339px){
+  .footer{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 667px){
+  .footer__informations{
+    min-width: fit-content;
+  }
+}
+
 @media(max-width:850px){
   .main-content{
     width: 80%;
@@ -276,6 +306,10 @@ body{
     flex-direction: column;
     position: relative;
   }
+  .header__navigation{
+    overflow-y: auto;
+    width: 100%;
+  }
   .header__title, .header__menu-button{
     margin: 0;
   }
@@ -284,3 +318,4 @@ body{
     min-width: 413px;
   }
 }
+
