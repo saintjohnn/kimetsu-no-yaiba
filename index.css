@@ -9,8 +9,8 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
   transition: all .5s;
+  overflow-x: hidden;
 }
 
 .header{
@@ -25,6 +25,7 @@ body{
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid black;
+
 }
 
 .header--color-styles{
@@ -222,7 +223,7 @@ body{
   }
   .header__navigation{
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     width: 400px;
     height: 500px;
     padding: 30px;
@@ -232,15 +233,15 @@ body{
     top: 0;
     right: -100%;
     /*right: 0;*/
-    /*border: 1px solid black;*/
+    border: 1px solid black;
     background-image: url('assets/images/knybackground.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    /*display: none;*/
     transition: all .5s;
+    /*display: none;*/
   }
   .show-menu{
-    display: block;
+    display: flex;
     right: 0;
   }
   .header__navigation-list{
@@ -318,4 +319,3 @@ body{
     min-width: 413px;
   }
 }
-
