@@ -3,7 +3,7 @@ const headerNavigation = document.querySelector(".header__navigation");
 const headerNavigationCloseButton = document.querySelector(
   ".header__navigation-close-button"
 );
-const modesLight = document.querySelector(".modes__light");
+const modesLight = document.querySelector(".modes__dark");
 const modes = document.querySelector(".modes");
 
 if (headerMenuButton) {
@@ -19,19 +19,19 @@ if (headerNavigationCloseButton) {
 }
 
 modesLight.addEventListener("click", function () {
-  if (modesLight.classList.contains("ri-sun-line")) {
-    modesLight.classList.remove("ri-sun-line");
-    modesLight.classList.add("ri-contrast-2-fill");
-  } else {
+  if (modesLight.classList.contains("ri-contrast-2-fill")) {
     modesLight.classList.remove("ri-contrast-2-fill");
     modesLight.classList.add("ri-sun-line");
+  } else {
+    modesLight.classList.remove("ri-sun-line");
+    modesLight.classList.add("ri-contrast-2-fill");
   }
 });
 
 modes.addEventListener("click", () => {
-  if (document.body.classList.contains("modes--light")) {
-    document.body.classList.remove("modes--light");
+  if (document.body.classList.contains("modes--dark")) {
+    document.body.classList.remove("modes--dark");
   } else {
-    document.body.classList.add("modes--light");
+    document.body.classList.add("modes--dark");
   }
 });

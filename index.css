@@ -3,8 +3,10 @@
 body{
   min-height: 100vh;
   min-width: 413px;
-  background: #202024;
-  color: rgb(214, 214, 214);
+  /*background: #202024;*/
+  /*color: rgb(214, 214, 214);*/
+  background: whitesmoke;
+  color: black;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,15 +43,13 @@ body{
 
 .header__navigation{
   display: flex;
-  margin-right: 40px;
 }
 
 .header__navigation-list{
   display: flex;
   align-items: baseline;
   list-style: none;
-  margin-right: 3rem;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .header__navigation-item{
@@ -62,7 +62,7 @@ body{
 }
 
 .btn-login{
-  width: 130px;
+  width: 100px;
   height: 50px;
   background: transparent;
   border: 2px solid inherit;
@@ -70,13 +70,28 @@ body{
   border-radius: 6px;
   cursor: pointer;
   font-family: "roadstore", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: inherit;
   font-weight: 500;
-  margin-left: 3rem;
+  margin-left: 20px;
 }
 
-.btn-login__link{
+.btn-register{
+  width: 100px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid inherit;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  color: inherit;
+  font-weight: 500;
+  transition: all .5s;
+}
+
+.btn__link{
   text-decoration: none;
   color: inherit;
 }
@@ -232,16 +247,39 @@ body{
   font-size: 1.5rem;
   cursor: pointer;
   align-self: center;
+  margin: 0 20px;
 }
 
-.modes--light{
-  background: whitesmoke;
-  color: black;
+.modes--dark{
+  background: #202024;
+  color: rgb(214, 214, 214);
+  /*background: whitesmoke;*/
+ /*color: black;*/
 }
 
-@media (max-width: 1391px){
+@media (max-width: 1393px){
+  .header__navigation-item{
+    font-size: 1.1rem;
+  }
+  .btn-login, .btn-register{
+    width: fit-content;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+}
+
+@media(max-width:1195px){
+  .header__title{
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 1119px){
   .main-content{
     width: 70%;
+  }
+  .header__title{
+    font-size: 2rem;
   }
   .header__navigation{
     flex-direction: column;
@@ -249,16 +287,14 @@ body{
     width: 400px;
     height: 500px;
     padding: 30px;
-    /*background: #DBDADA;*/
+    background: inherit;
     border-bottom-left-radius: 10px;
     margin-right: 0;
     top: 0;
     right: -100%;
     /*right: 0;*/
     border: 1px solid black;
-    background-image: url('assets/images/knybackground.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: inherit;
     transition: all .5s;
     /*display: none;*/
   }
@@ -268,7 +304,13 @@ body{
     top: 0;
     left: 0;
     border-width: 3px;
-    color: rgb(109, 7, 7);
+  }
+  .btn-register{
+    position: absolute;
+    margin: 10px 0 0 10px;
+    top: 0;
+    left: 85px;
+    border-width: 3px;
   }
   .show-menu{
     display: flex;
@@ -299,7 +341,6 @@ body{
     color: black;
   }
   .header__navigation-item{
-    color: rgb(109, 7, 7);
     font-weight: 900;
   }
   .header__navigation-element{
