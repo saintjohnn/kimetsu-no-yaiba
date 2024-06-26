@@ -49,7 +49,7 @@ body{
   display: flex;
   align-items: baseline;
   list-style: none;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 .header__navigation-item{
@@ -73,7 +73,8 @@ body{
   font-size: 1rem;
   color: inherit;
   font-weight: 500;
-  margin-left: 20px;
+  margin-left: 10px;
+  transition: all .5s;
 }
 
 .btn-register{
@@ -89,6 +90,10 @@ body{
   color: inherit;
   font-weight: 500;
   transition: all .5s;
+}
+
+.btn-login:hover, .btn-register:hover{
+  font-size: 1.1rem;
 }
 
 .btn__link{
@@ -274,12 +279,13 @@ body{
   }
 }
 
-@media (max-width: 1119px){
+@media (max-width: 1063px){
   .main-content{
     width: 70%;
   }
   .header__title{
     font-size: 2rem;
+    margin-left: 10px;
   }
   .header__navigation{
     flex-direction: column;
@@ -351,12 +357,6 @@ body{
     align-items: center;
     margin-right: 25px;
     cursor: pointer;
-  }
-}
-
-@media (max-width: 1339px){
-  .footer{
-    flex-direction: column;
   }
 }
 
