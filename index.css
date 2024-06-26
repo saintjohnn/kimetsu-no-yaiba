@@ -24,9 +24,6 @@ body{
   justify-content: space-between;
   position: sticky;
   top: 0;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border: 1px solid black;
 
 }
 
@@ -34,11 +31,22 @@ body{
   background: inherit;
 }
 
+.header--border-syles{
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid black;
+}
+
 .header__title{
-  margin-left: 1.5rem;
-  pointer-events: none;
-  user-select: none;
+  margin-left: 1.5rem;  
+}
+
+.header__title--font-style{
   font-family: 'Roadstore';
+}
+
+.header__title--user-select-style {
+  user-select: none; 
 }
 
 .header__navigation{
@@ -48,56 +56,34 @@ body{
 .header__navigation-list{
   display: flex;
   align-items: baseline;
-  list-style: none;
   gap: .5rem;
 }
 
+.header__navigation-list--list-style{
+  list-style: none;
+}
+
+.header__navigation-element:hover .header__navigation-item::after{
+  width: 100%;
+}
+
+.header__navigation-list:has(.header__navigation-element:hover) .header__navigation-element:not(:hover) {
+  transition: all .5s;
+  opacity: .3;
+}
+
 .header__navigation-item{
-  text-decoration: none;
-  color: inherit;
   position: relative;
+}
+
+.header__navigation-item--font-style{
+  text-decoration: none;
   font-size: 1.3rem;
   font-family: 'Roadstore';
   font-weight: 700;
 }
 
-.btn-login{
-  width: 100px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid inherit;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: "roadstore", sans-serif;
-  font-size: 1rem;
-  color: inherit;
-  font-weight: 500;
-  margin-left: 10px;
-  transition: all .5s;
-}
-
-.btn-register{
-  width: 100px;
-  height: 50px;
-  background: transparent;
-  border: 2px solid inherit;
-  outline: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: "roadstore", sans-serif;
-  font-size: 1rem;
-  color: inherit;
-  font-weight: 500;
-  transition: all .5s;
-}
-
-.btn-login:hover, .btn-register:hover{
-  font-size: 1.1rem;
-}
-
-.btn__link{
-  text-decoration: none;
+.header__navigation-item--color{
   color: inherit;
 }
 
@@ -116,8 +102,62 @@ body{
   transition: all .5s;
 }
 
-.header__navigation-element:hover .header__navigation-item::after{
-  width: 100%;
+.btn-login{
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.btn-login--font-style{
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-login--border-styles{
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-login--color-styles{
+  color: inherit;
+  background: transparent;
+}
+
+.btn-login--cursor-style{
+  cursor: pointer;
+}
+
+.btn-register{
+  width: 100px;
+  height: 50px;
+}
+
+.btn-register--font-style{
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-register--border-styles{
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-register--color-styles{
+  color: inherit;
+  background: transparent;
+}
+
+.btn-register--cursor-style{
+  cursor: pointer;
+}
+
+.btn-login a, .btn-register a{
+  text-decoration: none;
+  color: inherit;
 }
 
 .header__navigation-social-media{
@@ -135,10 +175,7 @@ body{
   transform: translateY(-.25rem);
 }
 
-.header__navigation-list:has(.header__navigation-element:hover) .header__navigation-element:not(:hover) {
-  transition: all .5s;
-  opacity: .3;
-}
+
 
 .footer__navigation-social-media-item{
   text-decoration: none;
@@ -285,7 +322,7 @@ body{
   }
   .header__title{
     font-size: 2rem;
-    margin-left: 10px;
+    margin-left: 50px;
   }
   .header__navigation{
     flex-direction: column;
@@ -343,7 +380,7 @@ body{
     top: 0;
     right: 0;
     cursor: pointer;
-    color: black;
+    color: inherit;
   }
   .header__navigation-item{
     font-weight: 900;
