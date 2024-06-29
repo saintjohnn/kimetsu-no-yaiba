@@ -33,13 +33,11 @@ body{
 
 .btn-main-page a{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   gap: 5px;
   text-decoration: none;
-  color: inherit;
-  font-size: 1.5rem;
-}
-
-.btn-main-page i{
   color: inherit;
   font-size: 1.5rem;
 }
@@ -69,9 +67,9 @@ body{
   position: relative;
   width: 400px;
   height: 440px;
-  background: whitesmoke;
+  background: inherit;
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.603);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -95,22 +93,23 @@ body{
   width: 100%;
   height: 50px;
   border-bottom: 2px solid black;
-  margin: 30px 0;
+  margin: 40px 0;
 }
 
-.input-box__label{
+.input-container__label{
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 0;
   transform: translateY(-50%);
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: inherit;
   pointer-events: none;
   transition: all .5s;
+  font-weight: 600;
 }
 
-.input-container .input-container__user-input:focus~label{
+.input-container__user-input-event{
   top: -5px;
 }
 
@@ -122,8 +121,18 @@ body{
   background: transparent;
   color: inherit;
   font-size: 1rem;
+  font-weight: 500;
+  padding-right: 35px;
+}
+
+.input-container__user-input + span{
+  font-family: 'Inter';
+  font-size: .8rem;
   font-weight: 600;
-  padding: 0 35px 0 5px;
+  color: rgb(223, 5, 5);
+  user-select: none;
+  visibility: hidden;
+  transition: all .5s;
 }
 
 .icon{
@@ -144,7 +153,7 @@ body{
 }
 
 .form__remember-forgot__login{
-  accent-color: inherit;
+  accent-color: rgb(146, 0, 0);
   margin-right: 3px;
 }
 
@@ -157,7 +166,7 @@ body{
   text-decoration: underline;
 }
 
-.btn-login {
+.btn-login-account {
   width: 100%;
   height: 45px;
   background: inherit;

@@ -16,7 +16,8 @@
 .header--border-syles{
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
-  border: 1px solid black;
+  border: 1px solid;
+  border-color: inherit;
 }
 
 .header__title{
@@ -38,7 +39,7 @@
 .header__navigation-list{
   display: flex;
   align-items: baseline;
-  gap: .5rem;
+  gap: 1rem;
 }
 
 .header__navigation-list--list-style{
@@ -85,6 +86,9 @@
 }
 
 .btn-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 50px;
   margin-left: 10px;
@@ -112,7 +116,10 @@
 }
 
 .btn-register{
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
   height: 50px;
 }
 
@@ -152,6 +159,7 @@
 .modes--dark{
   background: #202024;
   color: rgb(214, 214, 214);
+  border-color: rgb(163, 163, 163);
 }
 
 .header__navigation-close-button{
