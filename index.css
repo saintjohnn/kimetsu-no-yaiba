@@ -7,6 +7,7 @@ body{
   /*background: #202024;*/
   /*color: rgb(214, 214, 214);*/
   background: whitesmoke;
+  border-color: black;
   color: black;
   display: flex;
   flex-direction: column;
@@ -125,7 +126,7 @@ body{
   font-size: 5.5rem;
 }
 
-@media (max-width: 1393px){
+@media (max-width: 1360px){
   .header__navigation-item{
     font-size: 1.1rem;
   }
@@ -136,13 +137,13 @@ body{
   }
 }
 
-@media(max-width:1195px){
+@media(max-width:1231px){
   .header__title{
     font-size: 1.4rem;
   }
 }
 
-@media (max-width: 1063px){
+@media (max-width: 1154px){
   .main-content{
     width: 70%;
   }
@@ -162,7 +163,8 @@ body{
     top: 0;
     right: -100%;
     /*right: 0;*/
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: inherit;
     color: inherit;
     transition: all .5s;
     /*display: none;*/
@@ -178,7 +180,7 @@ body{
     position: absolute;
     margin: 10px 0 0 10px;
     top: 0;
-    left: 85px;
+    left: 100px;
     border-width: 3px;
   }
   .show-menu{
