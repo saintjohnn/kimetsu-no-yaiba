@@ -35,23 +35,25 @@
       <form action="#" class="form">
         <section class="input-container">
           <i class="ri-mail-line icon"></i>
-          <input type="email" class="input-container__login-email" id="iemail" name="email">
+          <input type="email" class="input-container__user-input" id="iemail" name="email" required>
           <!--<span></span>-->
-          <label for="iemail">Email</label>
+          <label for="iemail" class="input-box__label">Email</label>
         </section>
         <section class="input-container">
-          <i class="ri-mail-line icon"></i>
-          <input type="password" class="input-container__login-password" id="ipassword" name="password">
+          <i class="ri-lock-line icon"></i>
+          <input type="password" class="input-container__user-input" id="ipassword" name="password" required>
           <!--<span></span>-->
-          <label for="ipassword">Password</label>
+          <label for="ipassword" class="input-box__label">Password</label>
         </section>
-        <section class="form__remember-me">
-          <label>
-            <input type="checkbox" name="">Remember me
+        <section class="form__remember-forgot">
+          <label class="form__remember-forgot__login">
+            <input type="checkbox" name="remember" class="form__remember-forgot__login">Remember me
           </label>
+          <a href="#" class="form__remember-forgot__password">Forgot password?</a>
         </section>
-        <section class="form__forgot-password">
-          <a href="#">Forgot password?</a>
+        <button type="submit" class="btn-login">Login</button>  
+        <section class="login-register">
+          <p>Don't have an account? <a href="#">Register</a></p>
         </section>
       </form>
     </div>
