@@ -1,0 +1,339 @@
+@import '../../../global/global.css';
+
+body{
+  min-height: 100vh;
+  min-width: 413px;
+  /*background: #202024;*/
+  /*color: rgb(214, 214, 214);*/
+  background: whitesmoke;
+  color: black;
+  transition: all .5s;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  height: 6.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  position: initial;
+}
+
+.modes{
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: center;
+  margin-right: 20px;
+}
+
+.header--color-styles{
+  background: inherit;
+}
+
+.header--border-syles{
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid;
+  border-color: inherit;
+}
+
+.header__title{
+  margin-left: 1.5rem;  
+}
+
+.header__title--font-style{
+  font-family: 'Roadstore';
+}
+
+.header__title--user-select-style {
+  user-select: none; 
+}
+
+.modes--dark{
+  background: #202024;
+  color: rgb(214, 214, 214);
+  border-color: rgb(163, 163, 163);
+}
+
+.header__navigation-close-button{
+  display: none;
+}
+
+.header__navigation{
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.btn-main-page{
+  padding: 10px;
+  text-align: end;
+}
+
+.btn-main-page a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5rem;
+}
+
+.btn-main-page--font-style {
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-main-page--border-styles{
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-main-page--color-styles {
+  color: inherit;
+  background: transparent;
+}
+
+.btn-main-page--cursor-style{
+  cursor: pointer;
+}
+
+.header__menu-button{
+  display: none;
+}
+
+.header__menu-button--font-style{
+  font-size: 2.5rem;
+}
+
+.main-content{
+  width: 100%;
+  height: 750px;
+  min-height: 490px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  position: relative;
+  width: 400px;
+  height: fit-content;
+  background: inherit;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.603);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__box{
+  width: 100%;
+  padding: 40px;
+}
+
+.login__title{
+  font-family: 'roadstore', sans-serif;
+  font-size: 1.5rem;
+  color: inherit;
+  text-align: center;
+  user-select: none;
+}
+
+.input-container{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border-bottom: 2px solid black;
+  margin: 40px 0;
+}
+
+.input-container__label{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: inherit;
+  pointer-events: none;
+  transition: all .5s;
+  font-weight: 600;
+}
+
+.input-container__user-input-event{
+  top: -5px;
+}
+
+.input-container__user-input{
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  padding-right: 35px;
+}
+
+.input-container__user-input + span{
+  font-family: 'Inter';
+  font-size: .8rem;
+  font-weight: 600;
+  color: rgb(223, 5, 5);
+  user-select: none;
+  visibility: hidden;
+  transition: all .5s;
+}
+
+.icon{
+  position: absolute;
+  right: 8px;
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.form__remember-forgot{
+  font-size: .9rem;
+  color: inherit;
+  font-family: 'Inter';
+  margin: 25px 0;
+  font-weight: 500;
+}
+
+.form__remember-forgot__login{
+  accent-color: rgb(146, 0, 0);
+  margin-right: 3px;
+}
+
+.form__remember-forgot__login a{
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form__remember-forgot__login a:hover{
+  text-decoration: underline;
+}
+
+.form__remember-forgot__password {
+  color: inherit;
+  text-decoration: none;
+}
+
+.form__remember-forgot__password:hover {
+  text-decoration: underline;
+}
+
+.btn-login-account {
+  width: 100%;
+  height: 45px;
+  background: inherit;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Inter';
+  font-size: 1rem;
+  color: inherit;
+}
+
+.login-register{
+  font-size: .9em;
+  color: inherit;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 25px;
+  font-family: 'Inter';
+}
+
+.login-register p a{
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-register p a:hover{
+  text-decoration:underline;
+}
+/*
+@media(max-width:1024px){
+  .main-content{
+    height: 400px;
+  }
+}
+*/
+/*
+@media(max-width:912px){
+  .main-content{
+    height: 600px;
+  }
+}
+*/
+
+@media(max-width:500px){
+  .header__navigation{
+    flex-direction: column;
+    position: fixed;
+    gap: 10px;
+    width: 400px;
+    height: 500px;
+    padding: 30px;
+    background: inherit;
+    border-bottom-left-radius: 10px;
+    margin-right: 0;
+    top: 0;
+    right: -100%;
+    /*right: 0;*/
+    border: 1px solid;
+    border-color: inherit;
+    color: inherit;
+    transition: all .5s;
+    /*display: none;*/
+    z-index: 99;
+  }
+  .header__navigation > :nth-child(1){
+    margin-top: 50px;
+  }
+  .show-menu{
+    display: flex;
+    right: 0;
+  }
+  .modes{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    margin: 0;
+    font-size: 3.5rem;
+  }
+  .header__navigation-close-button{
+    display: initial;
+    position: absolute;
+    padding: 10px;
+    font-size: 2rem;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    color: inherit;
+  }
+  .header__menu-button{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 430px){
+  .header__navigation{
+    width: 100%;
+  }
+}
