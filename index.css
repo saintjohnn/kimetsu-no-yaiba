@@ -1,5 +1,4 @@
 @import 'assets/css/global/global.css';
-@import 'assets/css/styles/partials/header.css';
 
 body{
   min-height: 100vh;
@@ -15,6 +14,182 @@ body{
   align-items: center;
   transition: all .3s;
   overflow-x: hidden;
+}
+
+.header{
+  display: flex;
+  width: 100%;
+  min-width: 420px;
+  height: 6.5rem;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.header--color-styles{
+  background: inherit;
+}
+
+.header--border-syles{
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid;
+  border-color: inherit;
+}
+
+.header__title{
+  margin-left: 1.5rem;  
+}
+
+.header__title--font-style{
+  font-family: 'Roadstore';
+}
+
+.header__title--user-select-style {
+  user-select: none; 
+}
+
+.header__navigation{
+  display: flex;
+}
+
+.header__navigation-list{
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.header__navigation-list--list-style{
+  list-style: none;
+}
+
+.header__navigation-element:hover .header__navigation-item::after{
+  width: 100%;
+}
+
+.header__navigation-list:has(.header__navigation-element:hover) .header__navigation-element:not(:hover) {
+  transition: all .5s;
+  opacity: .3;
+}
+
+.header__navigation-item{
+  position: relative;
+}
+
+.header__navigation-item--font-style{
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: 'Roadstore';
+  font-weight: 700;
+}
+
+.header__navigation-item--color{
+  color: inherit;
+}
+
+.header__navigation-item:hover{
+  position: relative;
+}
+
+.header__navigation-item::after{
+  content: "";
+  background-color: rgb(146, 0, 0);
+  width: 0;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: all .5s;
+}
+
+.btn-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+}
+
+.btn-login--font-style{
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-login--border-styles{
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-login--color-styles{
+  color: inherit;
+  background: transparent;
+}
+
+.btn-login--cursor-style{
+  cursor: pointer;
+}
+
+.btn-register{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 50px;
+}
+
+.btn-register--font-style{
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn-register--border-styles{
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+}
+
+.btn-register--color-styles{
+  color: inherit;
+  background: transparent;
+}
+
+.btn-register--cursor-style{
+  cursor: pointer;
+}
+
+.btn-login a, .btn-register a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.modes{
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: center;
+  margin: 0 20px;
+}
+
+.modes--dark{
+  background: #202024;
+  color: rgb(214, 214, 214);
+  border-color: rgb(163, 163, 163);
+}
+
+.header__navigation-close-button{
+  display: none;
+}
+
+.header__menu-button{
+  display: none;
+}
+
+.header__menu-button--font-style{
+  font-size: 2.5rem;
 }
 
 .main-content{
