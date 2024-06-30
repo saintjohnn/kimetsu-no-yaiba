@@ -1,5 +1,4 @@
 @import '../../../global/global.css';
-@import '../../../../css/styles/partials/header.css';
 
 body{
   min-height: 100vh;
@@ -23,6 +22,42 @@ body{
   position: initial;
 }
 
+.modes{
+  font-size: 1.5rem;
+  cursor: pointer;
+  align-self: center;
+  margin: 0 20px;
+}
+
+.header--color-styles{
+  background: inherit;
+}
+
+.header--border-syles{
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid;
+  border-color: inherit;
+}
+
+.header__title{
+  margin-left: 1.5rem;  
+}
+
+.header__title--font-style{
+  font-family: 'Roadstore';
+}
+
+.header__title--user-select-style {
+  user-select: none; 
+}
+
+.modes--dark{
+  background: #202024;
+  color: rgb(214, 214, 214);
+  border-color: rgb(163, 163, 163);
+}
+
 .btn-main-page{
   padding: 10px;
   margin-left: auto;
@@ -38,11 +73,7 @@ body{
   color: inherit;
   font-size: 1.5rem;
 }
-/*
-.btn-main-page i{
-  color: inherit;
-}
-*/
+
 .btn-main-page--font-style {
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
