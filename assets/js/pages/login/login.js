@@ -1,8 +1,10 @@
 const inputContainerUserInputEmail = document.querySelector("[name=email]");
+
 const inputContainerUserInputPassword =
   document.querySelector("[name=password]");
 
 const emailLabel = document.querySelector("#email-label");
+
 const passwordLabel = document.querySelector("#password-label");
 
 inputContainerUserInputEmail.addEventListener("click", () => {
