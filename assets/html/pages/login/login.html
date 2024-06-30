@@ -11,6 +11,7 @@
   <script defer src="../../../js/pages/login/login.js"></script>
 </head>
 <body>
+  
   <header class="header header--color-styles header--border-syles">
 
     <h1 class="header__title header__title--font-style header__title--user-select-style">Login</h1>
@@ -30,35 +31,37 @@
     </div>
    
   </header>
-  <main class="login">
-    <div class="login__box">
-      <h2 class="login__title">Login</h2>
-      <form action="#" class="form" autocomplete="off" method="post">
-        <section class="input-container">
-          <i class="ri-mail-line icon"></i>
-          <input type="email" class="input-container__user-input" id="iemail" name="email" required>
 
-          <span>digite um email válido</span>
-          <label for="iemail" id="email-label" class="input-container__label">Email</label>
-        </section>
-        <section class="input-container">
-          <i class="ri-lock-line icon"></i>
-          <input type="password" class="input-container__user-input" id="ipassword" name="password" required>
-          <span>senha incorreta</span>
-          <label for="ipassword" id="password-label" class="input-container__label">Password</label>
-        </section>
-        <section class="form__remember-forgot">
-          <label class="form__remember-forgot__login">
-            <input type="checkbox" name="remember" class="form__remember-forgot__login">Remember me
-          </label>
-          <a href="#" class="form__remember-forgot__password">Forgot password?</a>
-        </section>
-        <button type="submit" class="btn-login-account">Login</button>  
-        <section class="login-register">
-          <p>Don't have an account? <a href="#"><i class="ri-user-line"></i>Register</a></p>
-        </section>
-      </form>
-    </div>
+  <main class="main-content">
+      <section class="login">
+        <div class="login__box">
+          <h2 class="login__title">Login</h2>
+          <form action="#" class="form" autocomplete="off" method="post">
+            <section class="input-container">
+              <i class="ri-mail-line icon"></i>
+              <input type="email" class="input-container__user-input" id="iemail" name="email" required>
+              <span>digite um email válido</span>
+              <label for="iemail" id="email-label" class="input-container__label">Email</label>
+            </section>
+            <section class="input-container">
+              <i class="ri-lock-line icon"></i>
+              <input type="password" class="input-container__user-input" id="ipassword" name="password" required>
+              <span>senha incorreta</span>
+              <label for="ipassword" id="password-label" class="input-container__label">Password</label>
+            </section>
+            <section class="form__remember-forgot">
+              <label class="form__remember-forgot__login">
+                <input type="checkbox" name="remember" class="form__remember-forgot__login">Remember me
+              </label>
+              <a href="#" class="form__remember-forgot__password">Forgot password?</a>
+            </section>
+            <button type="submit" class="btn-login-account">Login</button>
+            <section class="login-register">
+              <p>Don't have an account? <a href="#">Register</a></p>
+            </section>
+          </form>
+        </div>
+      </section>
   </main>
 </body>
 </html>
