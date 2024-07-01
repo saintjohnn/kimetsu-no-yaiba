@@ -7,22 +7,22 @@ const emailLabel = document.querySelector("#email-label");
 
 const passwordLabel = document.querySelector("#password-label");
 
-inputContainerUserInputEmail.addEventListener("click", () => {
+inputContainerUserInputEmail.addEventListener("focus", () => {
   emailLabel.classList.add("input-container__user-input-event");
   setTimeout(() => {
     inputContainerUserInputEmail.setAttribute(
       "placeholder",
       "Insira seu email"
     );
-  }, 250);
+  }, 15);
 });
 
-inputContainerUserInputPassword.addEventListener("click", () => {
+inputContainerUserInputPassword.addEventListener("focus", () => {
   passwordLabel.classList.add("input-container__user-input-event");
   setTimeout(() => {
     inputContainerUserInputPassword.setAttribute(
       "placeholder",
       "Insira sua senha"
     );
-  }, 250);
+  }, 15);
 });
