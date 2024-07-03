@@ -68,31 +68,60 @@ email.addEventListener("input", () => {
 });
 
 password.addEventListener("input", () => {
+  const passwordsObj = {
+    password: password.value,
+    confirmPassword: confirmPassword,
+  };
+
   const schemaPassword = z
-    .string()
-    .min(6, "senha deve ter no mínimo 6 caracteres")
-    .refine(
-      (value) => {
-        const splitValue = value.split("");
-        return splitValue.some((element) => isNaN(element));
-      },
-      {
-        message:
-          "a senha deve possuir ao menos um caracterere que não seja numérico",
-      }
-    )
-    .refine(
-      (value) => {
-        const arrayValue = value.split("");
-        return arrayValue.some((element) => !isNaN(element));
-      },
-      { message: "a senha deve possuir ao menos um número" }
-    );
+    .object({
+      password: z
+        .string()
+        .min(6, "senha deve ter no mínimo 6 caracteres")
+        .refine(
+          (value) => {
+            const splitValue = value.split("");
+            return splitValue.some((element) => isNaN(element));
+          },
+          {
+            message:
+              "a senha deve possuir ao menos um caracterere que não seja numérico",
+          }
+        )
+        .refine(
+          (value) => {
+            const arrayValue = value.split("");
+            return arrayValue.some((element) => !isNaN(element));
+          },
+          { message: "a senha deve possuir ao menos um número" }
+        ),
+      confirmPassword: z.string(),
+    })
+    .refine((fields) => fields.password === fields.confirmPassword, {
+      message: "as senhas devem ser iguais",
+    });
 
   validateSchemas(
     schemaPassword,
-    password,
+    passwordsObj,
     alertMessagePassword,
     inputContainerPassword
   );
 });
+
+/*
+confirmPassword.addEventListener("input", () => {
+  const schemaConfirmPassword = z
+    .any()
+    .refine((confirmPassword) => confirmPassword === password.value, {
+      message: "as senhas devem ser iguais",
+    });
+
+  validateSchemas(
+    schemaConfirmPassword,
+    confirmPassword,
+    alertMessageConfirmPassword,
+    inputContainerConfirmPassword
+  );
+});
+*/
