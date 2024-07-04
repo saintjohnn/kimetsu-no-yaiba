@@ -1,6 +1,5 @@
 import { z } from "../../../node_modules/zod/lib/index.mjs";
 
-const input = document.getElementsByTagName("input");
 const registerForm = document.querySelector("[name=register-form]");
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
