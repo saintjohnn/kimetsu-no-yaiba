@@ -142,6 +142,8 @@ submitButton.addEventListener("click", () => {
     alertMessageAgree.classList.add("input-container__user-input__alert-agree");
     alertMessageAgree.innerHTML =
       "você deve concordar com os termos de serviço e política de privacidade";
+  } else {
+    alertMessageAgree.innerHTML = "";
   }
 
   const inputValues = {
