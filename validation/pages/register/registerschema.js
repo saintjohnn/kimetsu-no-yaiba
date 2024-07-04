@@ -5,7 +5,8 @@ const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
 const confirmPassword = document.querySelector("[name=confirm-password]");
-const agree = document.querySelector("[name=agree]");
+const checkbox = document.querySelector("[name=agree]");
+const submitButton = document.querySelector(".btn-register-account");
 const alertMessageUsername = document.querySelector(
   ".input-container__user-input__alert-message-username"
 );
@@ -19,6 +20,10 @@ const alertMessagePassword = document.querySelector(
 const alertMessageConfirmPassword = document.querySelector(
   ".input-container__user-input__alert-message-confirm-password"
 );
+const alertMessageAgree = document.querySelector(
+  ".input-container__user-input__alert-agree"
+);
+const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
 const inputContainerUsername = document.querySelector(
   ".input-container--username"
 );
@@ -50,6 +55,7 @@ function validateSchemas(schema, inputName, alertMessage, inputContainer) {
 username.addEventListener("input", () => {
   const schemaUsername = z
     .string()
+    .min(1, "preencha este campo")
     .min(2, "nome de usuário deve ter no mínimo 2 caracteres")
     .max(30, "nome de usuário deve ter no máximo 30 caracteres");
 
@@ -62,58 +68,47 @@ username.addEventListener("input", () => {
 });
 
 email.addEventListener("input", () => {
-  const schemaEmail = z.string().email("insira um endereço de email válido");
+  const schemaEmail = z
+    .string()
+    .min(1, "preencha este campo")
+    .email("insira um endereço de email válido");
 
   validateSchemas(schemaEmail, email, alertMessageEmail, inputContainerEmail);
 });
 
 password.addEventListener("input", () => {
-  const passwordsObj = {
-    password: password.value,
-    confirmPassword: confirmPassword,
-  };
-
   const schemaPassword = z
-    .object({
-      password: z
-        .string()
-        .min(6, "senha deve ter no mínimo 6 caracteres")
-        .refine(
-          (value) => {
-            const splitValue = value.split("");
-            return splitValue.some((element) => isNaN(element));
-          },
-          {
-            message:
-              "a senha deve possuir ao menos um caracterere que não seja numérico",
-          }
-        )
-        .refine(
-          (value) => {
-            const arrayValue = value.split("");
-            return arrayValue.some((element) => !isNaN(element));
-          },
-          { message: "a senha deve possuir ao menos um número" }
-        ),
-      confirmPassword: z.string(),
-    })
-    .refine((fields) => fields.password === fields.confirmPassword, {
-      message: "as senhas devem ser iguais",
-    });
+    .string()
+    .min(1, "preencha este campo")
+    .min(6, "senha deve ter no mínimo 6 caracteres")
+    .refine(
+      (value) => {
+        const splitValue = value.split("");
+        return splitValue.some((element) => isNaN(element));
+      },
+      {
+        message:
+          "a senha deve possuir ao menos um caracterere que não seja numérico",
+      }
+    )
+    .refine(
+      (value) => {
+        const arrayValue = value.split("");
+        return arrayValue.some((element) => !isNaN(element));
+      },
+      { message: "a senha deve possuir ao menos um número" }
+    );
 
   validateSchemas(
     schemaPassword,
-    passwordsObj,
+    password,
     alertMessagePassword,
     inputContainerPassword
   );
-});
 
-/*
-confirmPassword.addEventListener("input", () => {
   const schemaConfirmPassword = z
-    .any()
-    .refine((confirmPassword) => confirmPassword === password.value, {
+    .string()
+    .refine((value) => value === password.value, {
       message: "as senhas devem ser iguais",
     });
 
@@ -124,4 +119,27 @@ confirmPassword.addEventListener("input", () => {
     inputContainerConfirmPassword
   );
 });
-*/
+
+confirmPassword.addEventListener("input", () => {
+  const schemaConfirmPassword = z
+    .string()
+    .min(1, "preencha este campo")
+    .refine((value) => value === password.value, {
+      message: "as senhas devem ser iguais",
+    });
+
+  validateSchemas(
+    schemaConfirmPassword,
+    confirmPassword,
+    alertMessageConfirmPassword,
+    inputContainerConfirmPassword
+  );
+});
+
+submitButton.addEventListener("click", () => {
+  if (!checkbox.checked) {
+    alertMessageAgree.classList.add("input-container__user-input__alert-agree");
+    alertMessageAgree.innerHTML =
+      "você deve concordar com os termos de serviço e política de privacidade";
+  }
+});
