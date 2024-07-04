@@ -189,7 +189,17 @@ body{
   color: rgb(223, 5, 5);
   user-select: none;
   display: none;
-  transition: all .5s;
+}
+
+.input-container__user-input__alert-agree, .alert-empty-fields{
+  text-align: center;
+  font-family: 'Inter';
+  font-size: .8rem;
+  font-weight: 600;
+  color: rgb(223, 5, 5);
+  user-select: none;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .icon{
@@ -203,7 +213,7 @@ body{
   font-size: .9rem;
   color: inherit;
   font-family: 'Inter';
-  margin: 25px 0;
+  margin: 25px 0 10px 0;
   font-weight: 500;
 }
 
