@@ -1,5 +1,6 @@
 import { z } from "../../../node_modules/zod/lib/index.mjs";
 
+const input = document.getElementsByTagName("input");
 const registerForm = document.querySelector("[name=register-form]");
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
@@ -141,5 +142,27 @@ submitButton.addEventListener("click", () => {
     alertMessageAgree.classList.add("input-container__user-input__alert-agree");
     alertMessageAgree.innerHTML =
       "você deve concordar com os termos de serviço e política de privacidade";
+  }
+
+  const inputValues = {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+    confirmPassword: confirmPassword.value,
+  };
+
+  const inputValuesSchema = z.object({
+    username: z.string().min(1),
+    email: z.string().min(1),
+    password: z.string().min(1),
+    confirmPassword: z.string().min(1),
+  });
+
+  const verifyInputValues = inputValuesSchema.safeParse(inputValues);
+
+  if (verifyInputValues.success === false) {
+    alertMessageEmptyFields.classList.add("alert-empty-fields");
+    alertMessageEmptyFields.innerHTML =
+      "preencha todos os campos antes do envio";
   }
 });
