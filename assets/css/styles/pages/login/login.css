@@ -164,14 +164,24 @@ body{
   padding-right: 35px;
 }
 
-.input-container__user-input + span{
+.input-container__user-input ~ span{
   font-family: 'Inter';
   font-size: .8rem;
   font-weight: 600;
   color: rgb(223, 5, 5);
   user-select: none;
-  visibility: hidden;
-  transition: all .5s;
+  display: none;
+}
+
+.input-container__user-input__alert-agree, .alert-empty-fields{
+  text-align: center;
+  font-family: 'Inter';
+  font-size: .8rem;
+  font-weight: 600;
+  color: rgb(223, 5, 5);
+  user-select: none;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .icon{
