@@ -33,10 +33,6 @@ const inputContainerConfirmPassword = document.querySelector(
   ".input-container--confirm-password"
 );
 
-registerForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
 function validateSchemas(schema, inputName, alertMessage, inputContainer) {
   const validate = schema.safeParse(inputName["value"]);
 
@@ -44,6 +40,7 @@ function validateSchemas(schema, inputName, alertMessage, inputContainer) {
     alertMessage.style.display = "inline";
     alertMessage.innerHTML = validate.error.issues[0].message;
     inputContainer.style.borderBottomColor = "red";
+    
   } else {
     inputContainer.style.borderBottomColor = "black";
     alertMessage.style.display = "none";
@@ -53,6 +50,10 @@ function validateSchemas(schema, inputName, alertMessage, inputContainer) {
 username.addEventListener("input", () => {
   const schemaUsername = Zod.string()
     .min(1, "preencha este campo")
+    .regex(
+      /^[a-zA-Z0-9çÇ]+$/,
+      "não é permitido caracteres especiais, caracteres acentuados e espaçamentos como nome de usuário"
+    )
     .min(2, "nome de usuário deve ter no mínimo 2 caracteres")
     .max(30, "nome de usuário deve ter no máximo 30 caracteres");
 
@@ -95,7 +96,7 @@ password.addEventListener("input", () => {
         const arrayValue = value.split("");
         return arrayValue.some((element) => !isNaN(element));
       },
-      { message: "a senha deve possuir ao menos um número" }
+      { message: 'a senha deve possuir ao menos um número' }
     );
 
   validateSchemas(
@@ -139,7 +140,7 @@ confirmPassword.addEventListener("input", () => {
   );
 });
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (event) => {
   if (!checkbox.checked) {
     alertMessageAgree.classList.add("input-container__user-input__alert-agree");
     alertMessageAgree.innerHTML =
@@ -171,17 +172,8 @@ submitButton.addEventListener("click", () => {
   } else {
     alertMessageEmptyFields.innerHTML = "";
   }
+  
+  event.preventDefault()
 });
 
-if (
-  alertMessageUsername.innerHTML === "" &&
-  alertMessageEmail.innerHTML === "" &&
-  alertMessagePassword.innerHTML === "" &&
-  alertMessageConfirmPassword.innerHTML === "" &&
-  alertMessageAgree.innerHTML === "" &&
-  alertMessageEmptyFields.innerHTML === ""
-) {
-  registerForm.addEventListener("submit", (event) => {
-    registerForm.submit();
-  });
-}
+
