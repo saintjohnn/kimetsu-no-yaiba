@@ -1,5 +1,3 @@
-import { z } from "../../../node_modules/zod/lib/index.mjs";
-
 const registerForm = document.querySelector("[name=register-form]");
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
@@ -53,8 +51,7 @@ function validateSchemas(schema, inputName, alertMessage, inputContainer) {
 }
 
 username.addEventListener("input", () => {
-  const schemaUsername = z
-    .string()
+  const schemaUsername = Zod.string()
     .min(1, "preencha este campo")
     .min(2, "nome de usuário deve ter no mínimo 2 caracteres")
     .max(30, "nome de usuário deve ter no máximo 30 caracteres");
@@ -68,8 +65,7 @@ username.addEventListener("input", () => {
 });
 
 email.addEventListener("input", () => {
-  const schemaEmail = z
-    .string()
+  const schemaEmail = Zod.string()
     .min(1, "preencha este campo")
     .email("insira um endereço de email válido");
 
@@ -77,9 +73,12 @@ email.addEventListener("input", () => {
 });
 
 password.addEventListener("input", () => {
-  const schemaPassword = z
-    .string()
+  const schemaPassword = Zod.string()
     .min(1, "preencha este campo")
+    .regex(
+      /^[a-zA-Z0-9çÇ]+$/,
+      "não é permitido caracteres especiais, caracteres acentuados e espaçamentos como senha"
+    )
     .min(6, "senha deve ter no mínimo 6 caracteres")
     .refine(
       (value) => {
@@ -106,11 +105,12 @@ password.addEventListener("input", () => {
     inputContainerPassword
   );
 
-  const schemaConfirmPassword = z
-    .string()
-    .refine((value) => value === password.value, {
+  const schemaConfirmPassword = Zod.string().refine(
+    (value) => value === password.value,
+    {
       message: "as senhas devem ser iguais",
-    });
+    }
+  );
 
   validateSchemas(
     schemaConfirmPassword,
@@ -121,9 +121,12 @@ password.addEventListener("input", () => {
 });
 
 confirmPassword.addEventListener("input", () => {
-  const schemaConfirmPassword = z
-    .string()
+  const schemaConfirmPassword = Zod.string()
     .min(1, "preencha este campo")
+    .regex(
+      /^[a-zA-Z0-9çÇ]+$/,
+      "não é permitido caracteres especiais, caracteres acentuados e espaçamentos como senha"
+    )
     .refine((value) => value === password.value, {
       message: "as senhas devem ser iguais",
     });
@@ -152,11 +155,11 @@ submitButton.addEventListener("click", () => {
     confirmPassword: confirmPassword.value,
   };
 
-  const inputValuesSchema = z.object({
-    username: z.string().min(1),
-    email: z.string().min(1),
-    password: z.string().min(1),
-    confirmPassword: z.string().min(1),
+  const inputValuesSchema = Zod.object({
+    username: Zod.string().min(1),
+    email: Zod.string().min(1),
+    password: Zod.string().min(1),
+    confirmPassword: Zod.string().min(1),
   });
 
   const verifyInputValues = inputValuesSchema.safeParse(inputValues);
@@ -165,5 +168,20 @@ submitButton.addEventListener("click", () => {
     alertMessageEmptyFields.classList.add("alert-empty-fields");
     alertMessageEmptyFields.innerHTML =
       "preencha todos os campos antes do envio";
+  } else {
+    alertMessageEmptyFields.innerHTML = "";
   }
 });
+
+if (
+  alertMessageUsername.innerHTML === "" &&
+  alertMessageEmail.innerHTML === "" &&
+  alertMessagePassword.innerHTML === "" &&
+  alertMessageConfirmPassword.innerHTML === "" &&
+  alertMessageAgree.innerHTML === "" &&
+  alertMessageEmptyFields.innerHTML === ""
+) {
+  registerForm.addEventListener("submit", (event) => {
+    registerForm.submit();
+  });
+}
