@@ -7,8 +7,10 @@
   <link rel="shortcut icon" href="../../../../assets/images/knyfavicon.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="../../../css/styles/pages/login/login.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js"></script>
   <script defer src="../../../../index.js"></script>
   <script defer src="../../../js/pages/login/login.js"></script>
+  <script defer src="../../../../validation/pages/login/loginschema.js"></script>
 </head>
 <body>
   
@@ -36,17 +38,17 @@
       <section class="login">
         <div class="login__box">
           <h2 class="login__title">Login</h2>
-          <form action="#" class="form" autocomplete="off" method="post">
-            <section class="input-container">
+          <form action="#" class="form" autocomplete="off" method="post" name="login-form">
+            <section class="input-container input-container--email">
               <i class="ri-mail-line icon"></i>
-              <input type="email" class="input-container__user-input" id="iemail" name="email" required>
-              <span>digite um email válido</span>
+              <input type="email" class="input-container__user-input" id="iemail" name="email">
+              <span class="input-container__user-input__alert-message-email"></span>
               <label for="iemail" id="email-label" class="input-container__label">Email</label>
             </section>
-            <section class="input-container">
+            <section class="input-container input-container--password">
               <i class="ri-lock-line icon"></i>
-              <input type="password" class="input-container__user-input" id="ipassword" name="password" required>
-              <span>senha incorreta</span>
+              <input type="password" class="input-container__user-input" id="ipassword" name="password">
+              <span class="input-container__user-input__alert-message-password"></span>
               <label for="ipassword" id="password-label" class="input-container__label">Password</label>
             </section>
             <section class="form__remember-forgot">
@@ -55,6 +57,7 @@
               </label>
               <a href="#" class="form__remember-forgot__password">Forgot password?</a>
             </section>
+            <span class="alert-empty-fields"></span>
             <button type="submit" class="btn-login-account">Login</button>
             <section class="login-register">
               <p>Don't have an account? <a href="../register/register.html">Register</a></p>
