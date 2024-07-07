@@ -79,6 +79,6 @@ loginButton.addEventListener("click", (event) => {
 		alertMessageEmail.innerHTML === "" &&
 		alertMessagePassword.innerHTML === ""
 	) {
-		formLogin.submit();
+		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
 });
