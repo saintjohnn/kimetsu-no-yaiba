@@ -23,14 +23,17 @@ function validateSchemas(schema, inputName, alertMessage, inputContainer) {
 		inputContainer.style.borderBottomColor = "red";
 	} else {
 		inputContainer.style.borderBottomColor = "black";
-		alertMessage.style.display = "none";
+		alertMessage.innerHTML = "";
 	}
 }
 
 email.addEventListener("input", () => {
 	const schemaEmail = Zod.string()
 		.min(1, "preencha este campo")
-		.email("insira um endereço de email válido");
+		.regex(
+			/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+			"insira um endereço de email válido",
+		);
 
 	validateSchemas(schemaEmail, email, alertMessageEmail, inputContainerEmail);
 });
@@ -48,7 +51,9 @@ password.addEventListener("input", () => {
 	);
 });
 
-loginButton.addEventListener("click", () => {
+loginButton.addEventListener("click", (event) => {
+	event.preventDefault();
+
 	const inputValues = {
 		email: email.value,
 		password: password.value,
@@ -69,5 +74,11 @@ loginButton.addEventListener("click", () => {
 		alertMessageEmptyFields.innerHTML = "";
 	}
 
-	event.preventDefault();
+	if (
+		alertMessageEmptyFields.innerHTML === "" &&
+		alertMessageEmail.innerHTML === "" &&
+		alertMessagePassword.innerHTML === ""
+	) {
+		formLogin.submit();
+	}
 });
