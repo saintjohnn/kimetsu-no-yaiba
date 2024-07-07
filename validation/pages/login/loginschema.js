@@ -51,9 +51,7 @@ password.addEventListener("input", () => {
 	);
 });
 
-loginButton.addEventListener("click", (event) => {
-	event.preventDefault();
-
+loginButton.addEventListener("click", () => {
 	const inputValues = {
 		email: email.value,
 		password: password.value,
