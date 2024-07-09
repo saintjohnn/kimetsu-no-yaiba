@@ -22,23 +22,24 @@ modesLight.addEventListener("click", () => {
 	if (modesLight.classList.contains("ri-contrast-2-fill")) {
 		modesLight.classList.remove("ri-contrast-2-fill");
 		modesLight.classList.add("ri-sun-line");
+		localStorage.setItem("class", "ri-sun-line");
 	} else {
 		modesLight.classList.remove("ri-sun-line");
 		modesLight.classList.add("ri-contrast-2-fill");
+		localStorage.removeItem("class");
 	}
 });
 
+if (localStorage.getItem("class")) {
+	modesLight.classList.remove("ri-contrast-2-fill");
+	modesLight.classList.add("ri-sun-line");
+}
+
 modes.addEventListener("click", () => {
-	if (
-		!localStorage.getItem(
-			"dark",
-		) /*document.body.classList.contains("modes--dark")*/
-	) {
-		/*document.body.classList.remove("modes--dark");*/
+	if (!localStorage.getItem("dark")) {
 		localStorage.setItem("dark", "mode");
 		document.body.classList.add("modes--dark");
 	} else {
-		/*document.body.classList.add("modes--dark");*/
 		localStorage.removeItem("dark");
 		document.body.classList.remove("modes--dark");
 	}
