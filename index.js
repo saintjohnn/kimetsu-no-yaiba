@@ -29,9 +29,21 @@ modesLight.addEventListener("click", () => {
 });
 
 modes.addEventListener("click", () => {
-	if (document.body.classList.contains("modes--dark")) {
-		document.body.classList.remove("modes--dark");
-	} else {
+	if (
+		!localStorage.getItem(
+			"dark",
+		) /*document.body.classList.contains("modes--dark")*/
+	) {
+		/*document.body.classList.remove("modes--dark");*/
+		localStorage.setItem("dark", "mode");
 		document.body.classList.add("modes--dark");
+	} else {
+		/*document.body.classList.add("modes--dark");*/
+		localStorage.removeItem("dark");
+		document.body.classList.remove("modes--dark");
 	}
 });
+
+if (localStorage.getItem("dark")) {
+	document.body.classList.add("modes--dark");
+}
