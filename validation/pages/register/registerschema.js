@@ -140,12 +140,11 @@ confirmPassword.addEventListener("input", () => {
 });
 
 submitButton.addEventListener("click", (event) => {
-	event.preventDefault();
-
 	if (!checkbox.checked) {
 		alertMessageAgree.classList.add("input-container__user-input__alert-agree");
 		alertMessageAgree.innerHTML =
 			"você deve concordar com os termos de serviço e política de privacidade";
+		event.preventDefault();
 	} else {
 		alertMessageAgree.innerHTML = "";
 	}
@@ -179,8 +178,10 @@ submitButton.addEventListener("click", (event) => {
 		alertMessageEmail.innerHTML === "" &&
 		alertMessagePassword.innerHTML === "" &&
 		alertMessageConfirmPassword.innerHTML === "" &&
-		alertMessageUsername.innerHTML === ""
+		alertMessageUsername.innerHTML === "" &&
+		alertMessageAgree.innerHTML === ""
 	) {
+		localStorage.setItem("login", "true");
 		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
 });
