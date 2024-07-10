@@ -72,10 +72,10 @@ function setDisplay(elements, displayStyle) {
 	});
 }
 
-if (registerUsers) {
+if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = getLogin;
+	/*btnUsernameText.innerHTML = getLogin;*/
 }
 
 btnLogout.addEventListener("click", () => {
