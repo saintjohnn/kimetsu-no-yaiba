@@ -12,6 +12,7 @@ const inputContainerPassword = document.querySelector(
 	".input-container--password",
 );
 const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
+const alertUserEmail = document.querySelector(".alert-user-email");
 const loginButton = document.querySelector(".btn-login-account");
 
 function validateSchemas(schema, inputName, alertMessage, inputContainer) {
@@ -33,10 +34,7 @@ email.addEventListener("input", () => {
 		.regex(
 			/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
 			"insira um endereço de email válido",
-		)
-		.refine((value) => localStorage.getItem(value), {
-			message: "este email não existe",
-		});
+		);
 
 	validateSchemas(schemaEmail, email, alertMessageEmail, inputContainerEmail);
 });
@@ -75,10 +73,18 @@ loginButton.addEventListener("click", () => {
 		alertMessageEmptyFields.innerHTML = "";
 	}
 
+	if (!localStorage.getItem(email.value)) {
+		alertUserEmail.classList.add("alert-user-email");
+		alertUserEmail.innerHTML = "este email não existe";
+	} else {
+		alertUserEmail.innerHTML = "";
+	}
+
 	if (
 		alertMessageEmptyFields.innerHTML === "" &&
 		alertMessageEmail.innerHTML === "" &&
-		alertMessagePassword.innerHTML === ""
+		alertMessagePassword.innerHTML === "" &&
+		alertUserEmail.innerHTML === ""
 	) {
 		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}

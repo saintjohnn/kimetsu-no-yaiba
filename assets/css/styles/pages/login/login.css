@@ -104,7 +104,8 @@ body{
 .login{
   position: relative;
   width: 400px;
-  height: 440px;
+  height: fit-content;
+  /*height: 440px;*/
   background: inherit;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.603);
@@ -172,7 +173,7 @@ body{
   display: none;
 }
 
-.input-container__user-input__alert-agree, .alert-empty-fields{
+.input-container__user-input__alert-agree, .alert-empty-fields, .alert-user-email{
   text-align: center;
   font-family: 'Inter';
   font-size: .8rem;
