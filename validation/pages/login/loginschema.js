@@ -33,7 +33,10 @@ email.addEventListener("input", () => {
 		.regex(
 			/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
 			"insira um endereço de email válido",
-		);
+		)
+		.refine((value) => localStorage.getItem(value), {
+			message: "este email não existe",
+		});
 
 	validateSchemas(schemaEmail, email, alertMessageEmail, inputContainerEmail);
 });
