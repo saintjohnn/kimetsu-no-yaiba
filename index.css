@@ -102,7 +102,7 @@ body{
   transition: all .5s;
 }
 
-.btn-login{
+.btn-login, .btn-logout{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,29 +110,16 @@ body{
   max-width: 230px;
   height: 50px;
   margin-left: 10px;
-  white-space: nowrap;
   text-align: left;
   overflow: hidden;
-}
-
-.btn-login--font-style{
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-}
-
-.btn-login--border-styles{
   border: 2px solid inherit;
   border-radius: 6px;
   outline: none;
-}
-
-.btn-login--color-styles{
   color: inherit;
   background: transparent;
-}
-
-.btn-login--cursor-style{
   cursor: pointer;
 }
 
@@ -143,31 +130,46 @@ body{
   width: 120px;
   max-width: 230px;
   height: 50px;
-  white-space: nowrap;
-}
-
-.btn-register--font-style{
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-}
-
-.btn-register--border-styles{
   border: 2px solid inherit;
   border-radius: 6px;
   outline: none;
-}
-
-.btn-register--color-styles{
   color: inherit;
   background: transparent;
-}
-
-.btn-register--cursor-style{
   cursor: pointer;
 }
 
-.btn-login a, .btn-register a{
+.btn-username{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: max-content;
+  max-width: 200px;
+  height: 50px;
+  padding: 10px;
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.btn-username p{
+  white-space: nowrap;
+}
+
+.btn-username, .btn-logout{
+  display: none;
+}
+
+.btn-login a, .btn-register a, .btn-logout a, .btn-username a{
   text-decoration: none;
   color: inherit;
 }

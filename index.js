@@ -9,6 +9,9 @@ const login = document.querySelector("#login");
 const register = document.querySelector("#register");
 const btnLogin = document.querySelector(".btn-login");
 const btnRegister = document.querySelector(".btn-register");
+const btnUsername = document.querySelector(".btn-username");
+const btnLogout = document.querySelector(".btn-logout");
+const btnUsernameText = document.querySelector(".btn-username__text");
 
 if (headerMenuButton) {
 	headerMenuButton.addEventListener("click", () => {
@@ -55,27 +58,20 @@ if (localStorage.getItem("dark")) {
 
 const getLogin = localStorage.getItem("login");
 
-if (getLogin) {
-	const logoutIcon = document.createElement("i");
-	logoutIcon.className = "ri-logout-box-line";
-
-	const logouText = document.createTextNode(" Logout");
-
-	//btnRegister.style.width = "fitcontent";
-	register.innerHTML = "";
-	register.appendChild(logoutIcon);
-	register.appendChild(logouText);
-
-	const userIcon = document.createElement("i");
-	userIcon.className = "ri-shield-user-line";
-
-	const userText = document.createTextNode(localStorage.getItem("login"));
-
-	login.innerHTML = "";
-	btnLogin.style.justifyContent = "flex-start";
-	btnLogin.style.width = "fit-content";
-	btnLogin.style.paddingLeft = "5px";
-
-	login.appendChild(userIcon);
-	login.appendChild(userText);
+function setDisplay(elements, displayStyle) {
+	elements.forEach((element) => {
+		element.style.display = displayStyle;
+	});
 }
+
+if (getLogin) {
+	setDisplay([btnUsername, btnLogout], "flex");
+	setDisplay([btnLogin, btnRegister], "none");
+	btnUsernameText.innerHTML = getLogin;
+}
+
+btnLogout.addEventListener("click", () => {
+	localStorage.removeItem("login");
+	setDisplay([btnUsername, btnLogout], "none");
+	setDisplay([btnLogin, btnRegister], "flex");
+});
