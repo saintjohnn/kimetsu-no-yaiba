@@ -56,7 +56,15 @@ if (localStorage.getItem("dark")) {
 	document.body.classList.add("modes--dark");
 }
 
-const getLogin = localStorage.getItem("login");
+const totalUsers = localStorage.length;
+
+const registerUsers = [];
+
+for (let i = 0; i < totalUsers; i++) {
+	registerUsers.push(localStorage.key(i));
+}
+
+console.log(registerUsers);
 
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
@@ -64,7 +72,7 @@ function setDisplay(elements, displayStyle) {
 	});
 }
 
-if (getLogin) {
+if (registerUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = getLogin;
