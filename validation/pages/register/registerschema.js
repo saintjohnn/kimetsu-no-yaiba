@@ -182,7 +182,7 @@ submitButton.addEventListener("click", (event) => {
 		alertMessageUsername.innerHTML === "" &&
 		alertMessageAgree.innerHTML === ""
 	) {
-		localStorage.setItem(usernameAndEmail.value, username.value);
+		localStorage.setItem(email.value.toString(), username.value);
 		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
 });
