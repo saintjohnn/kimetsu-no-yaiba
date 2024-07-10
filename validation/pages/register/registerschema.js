@@ -53,7 +53,7 @@ username.addEventListener("input", () => {
 			/^[a-zA-Z0-9çÇ]+$/,
 			"não é permitido caracteres especiais, caracteres acentuados e espaçamentos como nome de usuário",
 		)
-		.regex(/^[^\d]+$/, "não é permitido números como senha")
+		.regex(/^[^\d]+$/, "não é permitido números como nome de usuário")
 		.min(2, "nome de usuário deve ter no mínimo 2 caracteres")
 		.max(30, "nome de usuário deve ter no máximo 30 caracteres");
 
