@@ -69,7 +69,7 @@ if (getLogin) {
 	const userIcon = document.createElement("i");
 	userIcon.className = "ri-shield-user-line";
 
-	const userText = document.createTextNode(inputUsername);
+	const userText = document.createTextNode(localStorage.getItem("login"));
 
 	login.innerHTML = "";
 	btnLogin.style.justifyContent = "flex-start";
