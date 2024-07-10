@@ -5,6 +5,10 @@ const headerNavigationCloseButton = document.querySelector(
 );
 const modesLight = document.querySelector(".modes__dark");
 const modes = document.querySelector(".modes");
+const login = document.querySelector("#login");
+const register = document.querySelector("#register");
+const btnLogin = document.querySelector(".btn-login");
+const btnRegister = document.querySelector(".btn-register");
 
 if (headerMenuButton) {
 	headerMenuButton.addEventListener("click", () => {
@@ -47,4 +51,31 @@ modes.addEventListener("click", () => {
 
 if (localStorage.getItem("dark")) {
 	document.body.classList.add("modes--dark");
+}
+
+const getLogin = localStorage.getItem("login");
+
+if (getLogin) {
+	const logoutIcon = document.createElement("i");
+	logoutIcon.className = "ri-logout-box-line";
+
+	const logouText = document.createTextNode(" Logout");
+
+	//btnRegister.style.width = "fitcontent";
+	register.innerHTML = "";
+	register.appendChild(logoutIcon);
+	register.appendChild(logouText);
+
+	const userIcon = document.createElement("i");
+	userIcon.className = "ri-shield-user-line";
+
+	const userText = document.createTextNode(inputUsername);
+
+	login.innerHTML = "";
+	btnLogin.style.justifyContent = "flex-start";
+	btnLogin.style.width = "fit-content";
+	btnLogin.style.paddingLeft = "5px";
+
+	login.appendChild(userIcon);
+	login.appendChild(userText);
 }
