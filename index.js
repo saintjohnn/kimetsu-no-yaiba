@@ -75,3 +75,11 @@ btnLogout.addEventListener("click", () => {
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
 });
+
+/*
+17 caracteres
+background: linear-gradient(to right, black, transparent);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+*/
