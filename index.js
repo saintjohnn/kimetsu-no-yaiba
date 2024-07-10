@@ -71,7 +71,7 @@ if (getLogin) {
 }
 
 btnLogout.addEventListener("click", () => {
-	localStorage.removeItem("login");
+	/*localStorage.removeItem("login");*/
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
 });
