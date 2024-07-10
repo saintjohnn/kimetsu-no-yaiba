@@ -1,5 +1,5 @@
 /*const formLogin = document.querySelector("[name=login-form]");*/
-export const email = document.querySelector("[name=email]");
+const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
 const alertMessageEmail = document.querySelector(
 	".input-container__user-input__alert-message-email",
@@ -87,5 +87,6 @@ loginButton.addEventListener("click", () => {
 		alertUserEmail.innerHTML === ""
 	) {
 		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+		btnUsernameText.innerHTML = localStorage.getItem(email.value);
 	}
 });

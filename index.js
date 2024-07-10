@@ -1,4 +1,3 @@
-import { email } from "./validation/pages/login/loginschema";
 const headerMenuButton = document.querySelector(".header__menu-button");
 const headerNavigation = document.querySelector(".header__navigation");
 const headerNavigationCloseButton = document.querySelector(
@@ -65,8 +64,6 @@ for (let i = 0; i < totalUsers; i++) {
 	registerUsers.push(localStorage.key(i));
 }
 
-console.log(registerUsers);
-
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
@@ -76,7 +73,6 @@ function setDisplay(elements, displayStyle) {
 if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = localStorage.getItem(email.value);
 }
 
 btnLogout.addEventListener("click", () => {
