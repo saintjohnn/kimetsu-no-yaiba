@@ -55,7 +55,7 @@ body{
 
 .header__navigation-list{
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -144,6 +144,7 @@ body{
 .btn-username{
   display: flex;
   justify-content: flex-start;
+  white-space: nowrap;
   align-items: center;
   width: max-content;
   max-width: 200px;
@@ -356,19 +357,23 @@ body{
     transition: right .5s;
     /*display: none;*/
   }
-  .btn-login{
+  .btn-login, .btn-username{
     position: absolute;
     margin: 10px 0 0 10px;
     top: 0;
     left: 0;
     border-width: 3px;
   }
-  .btn-register{
+  .btn-register, .btn-logout{
     position: absolute;
     margin: 10px 0 0 10px;
     top: 0;
     left: 100px;
     border-width: 3px;
+  }
+  .btn-logout{
+    top: 0;
+    left: 210px;
   }
   .show-menu{
     display: flex;
