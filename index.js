@@ -1,3 +1,4 @@
+import { email } from "./validation/pages/login/loginschema";
 const headerMenuButton = document.querySelector(".header__menu-button");
 const headerNavigation = document.querySelector(".header__navigation");
 const headerNavigationCloseButton = document.querySelector(
@@ -75,7 +76,7 @@ function setDisplay(elements, displayStyle) {
 if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	/*btnUsernameText.innerHTML = getLogin;*/
+	btnUsernameText.innerHTML = localStorage.getItem(email.value);
 }
 
 btnLogout.addEventListener("click", () => {

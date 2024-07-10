@@ -1,5 +1,5 @@
-const formLogin = document.querySelector("[name=login-form]");
-const email = document.querySelector("[name=email]");
+/*const formLogin = document.querySelector("[name=login-form]");*/
+export const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
 const alertMessageEmail = document.querySelector(
 	".input-container__user-input__alert-message-email",
