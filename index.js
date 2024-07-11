@@ -67,11 +67,6 @@ for (let i = 0; i < totalUsers; i++) {
 }
 */
 
-const iemail = userEmail;
-const ieeuser = localStorage.getItem(userEmail);
-console.log(iemail);
-console.log(ieeuser);
-
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
@@ -95,10 +90,9 @@ btnLogout.addEventListener("click", () => {
 		window.location.host +
 		window.location.pathname;
 	window.location.replace(newUrl);
+	localStorage.setItem(`${userEmail} `, `${localStorage.getItem(userEmail)} `);
 	localStorage.removeItem(userEmail);
 });
-
-localStorage.setItem(iemail, ieeuser);
 
 /*
 17 caracteres
