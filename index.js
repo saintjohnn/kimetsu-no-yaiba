@@ -5,13 +5,10 @@ const headerNavigationCloseButton = document.querySelector(
 );
 const modesLight = document.querySelector(".modes__dark");
 const modes = document.querySelector(".modes");
-const login = document.querySelector("#login");
-const register = document.querySelector("#register");
 const btnLogin = document.querySelector(".btn-login");
 const btnRegister = document.querySelector(".btn-register");
 const btnUsername = document.querySelector(".btn-username");
 const btnLogout = document.querySelector(".btn-logout");
-const btnUsernameText = document.querySelector(".btn-username__text");
 
 if (headerMenuButton) {
 	headerMenuButton.addEventListener("click", () => {
@@ -58,12 +55,12 @@ if (localStorage.getItem("dark")) {
 
 const totalUsers = localStorage.length;
 
-const registerUsers = [];
-
+//const registerUsers = [];
+/*
 for (let i = 0; i < totalUsers; i++) {
 	registerUsers.push(localStorage.key(i));
 }
-
+*/
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
@@ -73,6 +70,7 @@ function setDisplay(elements, displayStyle) {
 if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
+	/*btnUsernameText.innerHTML =  */
 }
 
 btnLogout.addEventListener("click", () => {
