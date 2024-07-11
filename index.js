@@ -66,6 +66,9 @@ for (let i = 0; i < totalUsers; i++) {
 	registerUsers.push(localStorage.key(i));
 }
 */
+
+const objetoRemovido = localStorage.getItem(userEmail);
+
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
@@ -91,6 +94,8 @@ btnLogout.addEventListener("click", () => {
 	window.location.replace(newUrl);
 	localStorage.removeItem(userEmail);
 });
+
+localStorage.setItem(userEmail, localStorage.getItem(userEmail));
 
 /*
 17 caracteres
