@@ -55,6 +55,12 @@ if (localStorage.getItem("dark")) {
 
 const totalUsers = localStorage.length;
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const userEmail = urlParams.get("email");
+console.log(urlParams);
+console.log(userEmail);
+
 //const registerUsers = [];
 /*
 for (let i = 0; i < totalUsers; i++) {

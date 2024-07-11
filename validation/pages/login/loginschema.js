@@ -87,7 +87,6 @@ loginButton.addEventListener("click", () => {
 		alertMessagePassword.innerHTML === "" &&
 		alertUserEmail.innerHTML === ""
 	) {
-		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+		window.location.href = `https://saintjohnn.github.io/kimetsu-no-yaiba/?email=${encodeURIComponent(email.value)}`;
 	}
 });
-console.log(email.value);
