@@ -58,6 +58,7 @@ const totalUsers = localStorage.length;
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
+const userEmail = urlParams.get("email");
 //let userEmail = urlParams.get("email");
 
 //const registerUsers = [];
@@ -74,24 +75,17 @@ function setDisplay(elements, displayStyle) {
 }
 
 if (totalUsers) {
-	const userEmail = urlParams.get("email");
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-
-	if (userEmail !== null && userEmail !== "") {
-		btnUsernameText.innerHTML = localStorage.getItem(userEmail);
-		localStorage.setItem(
-			`${userEmail}.`,
-			`${localStorage.getItem(userEmail)}.`,
-		);
-	}
+	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
+	//localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
 }
 
 btnLogout.addEventListener("click", () => {
 	/*localStorage.removeItem("login");*/
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
-
+	/*/
 	const newUrl =
 		window.location.protocol +
 		"//" +
@@ -99,6 +93,7 @@ btnLogout.addEventListener("click", () => {
 		window.location.pathname;
 	window.location.replace(newUrl);
 	localStorage.removeItem(urlParams.get("email"));
+	*/
 });
 
 /*
