@@ -85,7 +85,10 @@ btnLogout.addEventListener("click", () => {
 	/*localStorage.removeItem("login");*/
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
-	/*/
+
+	window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+
+	/*
 	const newUrl =
 		window.location.protocol +
 		"//" +
