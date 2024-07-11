@@ -77,13 +77,13 @@ if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
+	localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
 }
 
 btnLogout.addEventListener("click", () => {
 	/*localStorage.removeItem("login");*/
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
-	localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
 
 	const newUrl =
 		window.location.protocol +
