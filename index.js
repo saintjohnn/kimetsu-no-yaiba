@@ -77,9 +77,9 @@ if (totalUsers) {
 	const userEmail = urlParams.get("email");
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
 
-	if (userEmail !== null) {
+	if (userEmail !== null && userEmail !== "") {
+		btnUsernameText.innerHTML = localStorage.getItem(userEmail);
 		localStorage.setItem(
 			`${userEmail}.`,
 			`${localStorage.getItem(userEmail)}.`,
