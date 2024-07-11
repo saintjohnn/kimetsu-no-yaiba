@@ -78,6 +78,7 @@ if (totalUsers) {
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
 	localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
+	localStorage.removeItem("null.");
 }
 
 btnLogout.addEventListener("click", () => {
