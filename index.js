@@ -59,7 +59,7 @@ const totalUsers = localStorage.length;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userEmail = urlParams.get("email");
-//let userEmail = urlParams.get("email");
+const url = window.location.href;
 
 //const registerUsers = [];
 /*
@@ -74,7 +74,7 @@ function setDisplay(elements, displayStyle) {
 	});
 }
 
-if (totalUsers) {
+if (url.includes("?email=")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
