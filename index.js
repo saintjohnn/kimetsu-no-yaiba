@@ -82,6 +82,12 @@ btnLogout.addEventListener("click", () => {
 	/*localStorage.removeItem("login");*/
 	setDisplay([btnUsername, btnLogout], "none");
 	setDisplay([btnLogin, btnRegister], "flex");
+	const newUrl =
+		window.location.protocol +
+		"//" +
+		window.location.host +
+		window.location.pathname;
+	window.location.replace(newUrl);
 });
 
 /*

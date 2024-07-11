@@ -183,6 +183,6 @@ submitButton.addEventListener("click", (event) => {
 		alertMessageAgree.innerHTML === ""
 	) {
 		localStorage.setItem(email.value.toString(), username.value);
-		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+		window.location.href = `https://saintjohnn.github.io/kimetsu-no-yaiba/?email=${encodeURIComponent(email.value)}`;
 	}
 });
