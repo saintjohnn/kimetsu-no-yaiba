@@ -78,7 +78,13 @@ if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
-	localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
+
+	if (userEmail !== null) {
+		localStorage.setItem(
+			`${userEmail}.`,
+			`${localStorage.getItem(userEmail)}.`,
+		);
+	}
 }
 
 btnLogout.addEventListener("click", () => {
