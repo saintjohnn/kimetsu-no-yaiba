@@ -9,6 +9,7 @@ const btnLogin = document.querySelector(".btn-login");
 const btnRegister = document.querySelector(".btn-register");
 const btnUsername = document.querySelector(".btn-username");
 const btnLogout = document.querySelector(".btn-logout");
+const btnUsernameText = document.querySelector(".btn-username__text");
 
 if (headerMenuButton) {
 	headerMenuButton.addEventListener("click", () => {
