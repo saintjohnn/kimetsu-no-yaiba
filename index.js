@@ -58,8 +58,6 @@ const totalUsers = localStorage.length;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userEmail = urlParams.get("email");
-console.log(urlParams);
-console.log(userEmail);
 
 //const registerUsers = [];
 /*
@@ -76,7 +74,7 @@ function setDisplay(elements, displayStyle) {
 if (totalUsers) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	/*btnUsernameText.innerHTML =  */
+	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
 }
 
 btnLogout.addEventListener("click", () => {
