@@ -156,7 +156,7 @@ body{
   /*border: 2px solid inherit;*/
   /*border-radius: 6px;*/
   outline: none;
-  color: rgb(245 4 86);
+  color: inherit;
   background: transparent;
   cursor: pointer;
   overflow: hidden;
@@ -170,7 +170,7 @@ body{
   background: linear-gradient(to right, rgb(245 4 86),rgb(245 4 86),rgb(245 4 86),rgba(0, 0, 0, 0));
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: inherit;
 }
 
 .btn-username p{
