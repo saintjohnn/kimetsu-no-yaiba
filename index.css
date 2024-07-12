@@ -122,7 +122,7 @@ body{
   cursor: pointer;
 }
 
-.btn-register{
+.btn-register {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,6 +190,7 @@ body{
 
 .header__navigation-close-button{
   display: none;
+  color: red;
 }
 
 .header__menu-button{
