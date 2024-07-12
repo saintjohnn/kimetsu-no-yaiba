@@ -107,11 +107,7 @@ if (btnUsernameText) {
 
 const dark = localStorage.getItem("dark");
 
-if (
-	dark &&
-	btnUsernameText.innerText.length > 11 &&
-	document.body.classList.contains("modes--dark")
-) {
+do {
 	btnUsernameText.classList.remove("--btn-username-gradient");
 	btnUsernameText.classList.add("--btn-username-gradient-white");
-}
+} while (dark && btnUsernameText.innerText.length > 11);
