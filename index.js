@@ -97,6 +97,6 @@ btnLogout.addEventListener("click", () => {
 	window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 });
 
-if (btnUsername.length > 10) {
+if (btnUsername.innerHTML.length > 10) {
 	btnUsername.classList.add(".--btn-username-gradient");
 }
