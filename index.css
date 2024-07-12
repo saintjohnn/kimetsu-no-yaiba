@@ -162,6 +162,13 @@ body{
   overflow: hidden;
 }
 
+.--btn-username-gradient{
+  background: linear-gradient(to right, inherit, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .btn-username p{
   white-space: nowrap;
 }
