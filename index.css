@@ -143,7 +143,7 @@ body{
 .btn-username{
   display: flex;
   justify-content: flex-start;
-  white-space: nowrap;
+  /*white-space: nowrap;*/
   align-items: center;
   width: fit-content;
   max-width: 149px;
@@ -152,6 +152,7 @@ body{
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
   font-weight: 500;
+  border: 0;
   /*border: 2px solid inherit;*/
   /*border-radius: 6px;*/
   outline: none;
