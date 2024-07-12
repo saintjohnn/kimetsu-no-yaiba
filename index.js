@@ -78,13 +78,14 @@ if (url.includes("?email=")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
-	localStorage.setItem("save", `${userEmail}.`);
+	localStorage.setItem("save", `${localStorage.getItem(userEmail)}.`);
 	//localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
 }
 
 if (localStorage.getItem("save")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
+	btnUsernameText.innerHTML = localStorage.getItem("save");
 }
 
 btnLogout.addEventListener("click", () => {
