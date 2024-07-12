@@ -167,10 +167,10 @@ body{
 }
 
 .--btn-username-gradient{
-  background: linear-gradient(to right, rgb(245 4 86),rgb(245 4 86),rgb(245 4 86),rgba(0, 0, 0, 0));
+  background:  linear-gradient(to right, black 50%, transparent 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: inherit;
+  color: transparent;
 }
 
 .btn-username p{
