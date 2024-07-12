@@ -100,21 +100,14 @@ if (btnLogout) {
 }
 
 if (btnUsernameText) {
-	if (btnUsernameText.innerText.length > 11 && !localStorage.getItem("dark")) {
+	if (btnUsernameText.innerText.length > 11) {
 		btnUsernameText.classList.add("--btn-username-gradient");
-	} else if (
-		btnUsernameText.innerText.length > 11 &&
-		localStorage.getItem("dark")
-	) {
-		btnUsernameText.classList.remove("--btn-username-gradient-white");
-		btnUsernameText.classList.add("--btn-username-gradient-white");
 	}
 }
 
-/*
-if (localStorage.getItem("dark")) {
-	console.log(localStorage.getItem("dark"));
-	btnUsernameText.classList.remove("--btn-username-gradient-white");
+const dark = localStorage.getItem("dark");
+
+if (dark && btnUsernameText.innerText.length > 11) {
+	btnUsernameText.classList.remove("--btn-username-gradient");
 	btnUsernameText.classList.add("--btn-username-gradient-white");
 }
-*/
