@@ -167,9 +167,9 @@ body{
 }
 
 .--btn-username-gradient{
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgb(245 4 86),rgb(245 4 86),rgb(245 4 86),rgba(0, 0, 0, 0));
   -webkit-background-clip: text;
-  background-clip: text;
+ background-clip: text;
   color: inherit;
 }
 
