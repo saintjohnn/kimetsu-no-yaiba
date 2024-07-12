@@ -85,7 +85,7 @@ if (url.includes("?email=")) {
 if (localStorage.getItem("save")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = localStorage.getItem("save");
+	btnUsernameText.innerHTML = localStorage.getItem("save").replace(".", "");
 }
 
 btnLogout.addEventListener("click", () => {
@@ -95,16 +95,6 @@ btnLogout.addEventListener("click", () => {
 
 	localStorage.removeItem("save");
 	window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
-
-	/*
-	const newUrl =
-		window.location.protocol +
-		"//" +
-		window.location.host +
-		window.location.pathname;
-	window.location.replace(newUrl);
-	localStorage.removeItem(urlParams.get("email"));
-	*/
 });
 
 /*
