@@ -104,10 +104,3 @@ if (btnUsernameText) {
 		btnUsernameText.classList.add("--btn-username-gradient");
 	}
 }
-
-const dark = localStorage.getItem("dark");
-
-do {
-	btnUsernameText.classList.remove("--btn-username-gradient");
-	btnUsernameText.classList.add("--btn-username-gradient-white");
-} while (dark && btnUsernameText.innerText.length > 11);
