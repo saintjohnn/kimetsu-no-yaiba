@@ -105,10 +105,9 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fit-content;
-  max-width: 149px;
+  width: 100px;
+  max-width: 230px;
   height: 50px;
-  padding: 10px;
   margin-left: 10px;
   text-align: left;
   overflow: hidden;
@@ -122,7 +121,6 @@ body{
   background: transparent;
   cursor: pointer;
 }
-
 
 .btn-register{
   display: flex;
@@ -147,7 +145,8 @@ body{
   justify-content: flex-start;
   white-space: nowrap;
   align-items: center;
-  width: 200px;
+  width: fit-content;
+  max-width: 149px;
   height: 50px;
   padding: 10px;
   font-family: "roadstore", sans-serif;
