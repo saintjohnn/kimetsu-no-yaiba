@@ -98,7 +98,7 @@ btnLogout.addEventListener("click", () => {
 });
 
 if (btnUsername.innerText.length > 10) {
-	btnUsername.classList.add(".--btn-username-gradient");
+	btnUsername.classList.add("--btn-username-gradient");
 }
 
 console.log(btnUsername.innerText.length);
