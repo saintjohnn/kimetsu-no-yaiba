@@ -10,6 +10,7 @@ const btnRegister = document.querySelector(".btn-register");
 const btnUsername = document.querySelector(".btn-username");
 const btnLogout = document.querySelector(".btn-logout");
 const btnUsernameText = document.querySelector(".btn-username__text");
+const btnUsernameGradient = document.querySelector(".--btn-username-gradient");
 
 if (headerMenuButton) {
 	headerMenuButton.addEventListener("click", () => {
@@ -100,7 +101,12 @@ if (btnLogout) {
 }
 
 if (btnUsernameText) {
-	if (btnUsernameText.innerText.length > 10) {
+	if (btnUsernameText.innerText.length > 11) {
 		btnUsernameText.classList.add("--btn-username-gradient");
 	}
+}
+
+if (document.body.classList.contains("modes--dark")) {
+	btnUsernameGradient.style.background =
+		"linear-gradient(to right, #ffffff 50%, transparent 100%)";
 }
