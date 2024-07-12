@@ -100,13 +100,21 @@ if (btnLogout) {
 }
 
 if (btnUsernameText) {
-	if (btnUsernameText.innerText.length > 11) {
+	if (btnUsernameText.innerText.length > 11 && !localStorage.getItem("dark")) {
 		btnUsernameText.classList.add("--btn-username-gradient");
+	} else if (
+		btnUsernameText.innerText.length > 11 &&
+		localStorage.getItem("dark")
+	) {
+		btnUsernameText.classList.remove("--btn-username-gradient-white");
+		btnUsernameText.classList.add("--btn-username-gradient-white");
 	}
 }
 
+/*
 if (localStorage.getItem("dark")) {
 	console.log(localStorage.getItem("dark"));
 	btnUsernameText.classList.remove("--btn-username-gradient-white");
 	btnUsernameText.classList.add("--btn-username-gradient-white");
 }
+*/
