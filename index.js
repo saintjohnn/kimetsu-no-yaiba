@@ -101,4 +101,4 @@ if (btnUsername.innerText.length > 10) {
 	btnUsername.classList.add("--btn-username-gradient");
 }
 
-console.log(btnUsername.innerText.length);
+console.log(btnUsername.innerText.length + "dddd");
