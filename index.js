@@ -106,6 +106,7 @@ if (btnUsernameText) {
 }
 
 if (localStorage.getItem("dark")) {
+	console.log(localStorage.getItem("dark"));
 	btnUsernameText.classList.remove("--btn-username-gradient");
 	btnUsernameText.classList.add("--btn-username-gradient-white");
 }
