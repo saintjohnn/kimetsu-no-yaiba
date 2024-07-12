@@ -148,12 +148,12 @@ body{
   width: fit-content;
   max-width: 149px;
   height: 50px;
-  padding: 10px;
+  /*padding: 10px;*/
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  border: 2px solid inherit;
-  border-radius: 6px;
+  /*border: 2px solid inherit;*/
+  /*border-radius: 6px;*/
   outline: none;
   color: inherit;
   background: transparent;
