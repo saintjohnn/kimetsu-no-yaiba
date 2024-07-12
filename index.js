@@ -88,17 +88,19 @@ if (localStorage.getItem("save")) {
 	btnUsernameText.innerHTML = localStorage.getItem("save").replace(".", "");
 }
 
-btnLogout.addEventListener("click", () => {
-	/*localStorage.removeItem("login");*/
-	setDisplay([btnUsername, btnLogout], "none");
-	setDisplay([btnLogin, btnRegister], "flex");
+if (btnLogout) {
+	btnLogout.addEventListener("click", () => {
+		/*localStorage.removeItem("login");*/
+		setDisplay([btnUsername, btnLogout], "none");
+		setDisplay([btnLogin, btnRegister], "flex");
 
-	localStorage.removeItem("save");
-	window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
-});
-
-if (btnUsernameText.innerText.length > 10) {
-	btnUsernameText.classList.add("--btn-username-gradient");
+		localStorage.removeItem("save");
+		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+	});
 }
 
-console.log(btnUsername.innerText.length + "dddd");
+if (btnUsernameText) {
+	if (btnUsernameText.innerText.length > 10) {
+		btnUsernameText.classList.add("--btn-username-gradient");
+	}
+}
