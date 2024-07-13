@@ -50,14 +50,8 @@ modes.addEventListener("click", () => {
 	}
 });
 
-if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	btnUsernameText.classList.add("--btn-username-gradient");
-}
-
 if (localStorage.getItem("dark")) {
 	document.body.classList.add("modes--dark");
-	btnUsernameText.classList.remove("--btn-username-gradient");
-	btnUsernameText.classList.add("--btn-username-gradient-white");
 }
 
 const totalUsers = localStorage.length;
@@ -105,10 +99,6 @@ if (btnLogout) {
 	});
 }
 
-/*
-if (btnUsernameText ){
-	if (btnUsernameText.innerText.length > 11) {
-		btnUsernameText.classList.add("--btn-username-gradient");
-	}
+if (btnUsernameText && btnUsernameText.innerText.length > 11) {
+	btnUsernameText.classList.add("--btn-username-gradient");
 }
-*/
