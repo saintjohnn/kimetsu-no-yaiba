@@ -103,17 +103,18 @@ if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	const text = btnUsernameText.textContent;
 	const length = text.length;
 
+	const part1 = text.slice(0, 11); // "JOAOPEDROS"
+	const part2 = text.slice(11, 12); // "I"
+	const part3 = text.slice(12, 14); // "LV"
+	const part4 = text.slice(14); // "A"
+
 	let newText = "";
 
-	for (let i = 0; i < length; i++) {
-		let opacityClass = "";
-		if (i < length * 0.5) {
-			opacityClass = `fade-${90 - i * 10}`;
-		} else {
-			opacityClass = `fade-${100 - i * 10 < 10 ? 10 : 100 - i * 10}`;
-		}
-		newText += `<span class="fade ${opacityClass}">${text[i]}</span>`;
-	}
+	// Apply opacity classes to each part
+	newText += `<span>${part1}</span>`;
+	newText += `<span class="fade fade-1">${part2}</span>`;
+	newText += `<span class="fade fade-2">${part3}</span>`;
+	newText += `<span class="fade fade-3">${part4}</span>`;
 
 	btnUsernameText.innerHTML = newText;
 }
