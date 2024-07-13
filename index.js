@@ -100,7 +100,10 @@ if (btnLogout) {
 }
 
 if (btnUsernameText) {
-	if (btnUsernameText.innerText.length > 11) {
+	if (btnUsernameText.innerText.length > 11 && !localStorage.getItem("dark")) {
 		btnUsernameText.classList.add("--btn-username-gradient");
+	} else {
+		btnUsernameText.classList.remove("--btn-username-gradient");
+		btnUsernameText.classList.add("--btn-username-gradient-white");
 	}
 }
