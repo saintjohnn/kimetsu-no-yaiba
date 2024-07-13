@@ -172,14 +172,14 @@ body{
   background-clip: text;
   color: transparent;
 }
-/*
+
 .--btn-username-gradient-white{
   background: linear-gradient(to right, #ffffff 50%, transparent 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
-*/
+
 .btn-username p{
   white-space: nowrap;
 }

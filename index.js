@@ -99,8 +99,28 @@ if (btnLogout) {
 	});
 }
 
-if (btnUsernameText) {
+if (
+	btnUsernameText &&
+	!localStorage.getItem("dark") &&
+	btnUsernameText.innerText.length > 11
+) {
+	btnUsernameText.classList.add("--btn-username-gradient");
+} else {
+	btnUsernameText.classList.remove("--btn-username-gradient");
+}
+
+if (
+	btnUsernameText &&
+	btnUsernameText.innerText.length > 11 &&
+	localStorage.getItem("dark")
+) {
+	btnUsernameText.classList.add("--btn-username-gradient-white");
+}
+
+/*
+if (btnUsernameText ){
 	if (btnUsernameText.innerText.length > 11) {
 		btnUsernameText.classList.add("--btn-username-gradient");
 	}
 }
+*/
