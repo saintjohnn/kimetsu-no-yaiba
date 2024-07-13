@@ -101,10 +101,19 @@ if (btnLogout) {
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	const text = btnUsernameText.textContent;
+	const length = text.length;
 
-	const text1 = text.slice(0, 11);
-	const text2 = text.slice(11, 13); // L and half of V
-	const text3 = text.slice(13); // rest of the text
+	let newText = "";
 
-	btnUsernameText.innerHTML = `${text1}<span class="fade-1">${text2[0]}</span><span class="fade-2">${text2[1]}</span><span class="fade-3">${text3}</span>`;
+	for (let i = 0; i < length; i++) {
+		let opacityClass = "";
+		if (i < length * 0.5) {
+			opacityClass = `fade-${90 - i * 10}`;
+		} else {
+			opacityClass = `fade-${100 - i * 10 < 10 ? 10 : 100 - i * 10}`;
+		}
+		newText += `<span class="fade ${opacityClass}">${text[i]}</span>`;
+	}
+
+	btnUsernameText.innerHTML = newText;
 }
