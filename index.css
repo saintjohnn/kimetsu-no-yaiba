@@ -167,7 +167,10 @@ body{
 }
 
 .opacity{
-  opacity: 0.5;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 1)); /* Ajuste a cor do fundo conforme necessário */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.5s ease; /* Transição suave */
 }
 
 .btn-username p{
