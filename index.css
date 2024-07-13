@@ -167,7 +167,6 @@ body{
 }
 
 .fade {
-  display: inline-block;
   transition: opacity 0.3s;
 }
 
