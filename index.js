@@ -100,5 +100,8 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	btnUsernameText.classList.add("--btn-username-gradient");
+	const text = btnUsernameText.innerText;
+	const text2 = text.slice(10);
+
+	text2.classList.add("opacity");
 }
