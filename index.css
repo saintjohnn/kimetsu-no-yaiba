@@ -166,11 +166,18 @@ body{
   color: inherit;
 }
 
-.degrade {
-  /*font-weight: bold;*/
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.fade {
+  font-size: inherit; /* Para manter o tamanho da fonte */
+  /* font-weight: bold; Para manter a espessura */
+  transition: opacity 0.5s ease; /* Transição suave para opacidade */
+}
+
+.fade {
+  opacity: 1; /* Totalmente visível */
+}
+
+.fade:hover {
+  opacity: 0.5; /* Reduz a opacidade ao passar o mouse */
 }
 
 /*
