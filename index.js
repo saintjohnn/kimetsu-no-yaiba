@@ -101,10 +101,10 @@ if (btnLogout) {
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	const text = btnUsernameText.textContent;
-	const text1 = text.slice(0, 11);
-	const text2 = text[11];
-	const text3 = text[12];
-	const text4 = text.slice[13];
 
-	btnUsernameText.innerHTML = `${text1}<span class="fade">${text2}</span><span class="fade fade-more">${text3}${text4}</span>`;
+	const text1 = text.slice(0, 11);
+	const text2 = text.slice(11, 13); // L and half of V
+	const text3 = text.slice(13); // rest of the text
+
+	btnUsernameText.innerHTML = `${text1}<span class="fade-1">${text2[0]}</span><span class="fade-2">${text2[1]}</span><span class="fade-3">${text3}</span>`;
 }
