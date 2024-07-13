@@ -99,15 +99,19 @@ if (btnLogout) {
 	});
 }
 
-if (btnUsernameText) {
-	if (btnUsernameText.innerText.length > 11) {
-		btnUsernameText.classList.add("--btn-username-gradient");
+function gradientWhite() {
+	if (localStorage.getItem("dark")) {
+		if (btnUsernameText.innerText.length > 11) {
+			btnUsernameText.classList.remove("--btn-username-gradient");
+			btnUsernameText.classList.add("--btn-username-gradient-white");
+		}
 	}
 }
 
-if (btnUsernameText && localStorage.getItem("dark")) {
-	if (btnUsernameText.innerText.length > 11) {
-		btnUsernameText.classList.remove("--btn-username-gradient");
-		btnUsernameText.classList.add("--btn-username-gradient-white");
+if (btnUsernameText) {
+	if (btnUsernameText.innerText.length > 11 && !localStorage.getItem("dark")) {
+		btnUsernameText.classList.add("--btn-username-gradient");
+	} else {
+		gradientWhite();
 	}
 }
