@@ -100,7 +100,7 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	const text = btnUsernameText.innerText;
+	const text = btnUsernameText.textContent;
 	const text2 = text.slice(10);
 
 	text2.classList.add("opacity");
