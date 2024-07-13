@@ -101,7 +101,8 @@ if (btnLogout) {
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	const text = btnUsernameText.textContent;
+	const text1 = text.slice(0, 10);
 	const text2 = text.slice(10);
 
-	text2.classList.add("opacity");
+	btnUsernameText.innerHTML = `${text1}<span class="opacity">${text2}</span>`;
 }
