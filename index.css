@@ -166,10 +166,6 @@ body{
   color: inherit;
 }
 
-.fade {
-  transition: opacity 0.3s;
-}
-
 .btn-username p{
   white-space: nowrap;
 }

@@ -100,25 +100,4 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	const text = btnUsernameText.textContent;
-
-	let newText = "";
-	let opacity = 1.0;
-
-	// From the start to "L" (index 11) to half of "V" (index 12.5)
-	for (let i = 0; i <= 12; i++) {
-		if (i === 12) {
-			opacity = 0.8; // Midpoint of "V"
-		}
-		newText += `<span class="fade" style="opacity: ${opacity};">${text[i]}</span>`;
-	}
-
-	// From half of "V" (index 12.5) to the end
-	for (let i = 13; i < text.length; i++) {
-		opacity -= 0.1;
-		if (opacity < 0.1) opacity = 0.1; // Ensure it doesn't go below 0.1
-		newText += `<span class="fade" style="opacity: ${opacity};">${text[i]}</span>`;
-	}
-
-	btnUsernameText.innerHTML = newText;
 }
