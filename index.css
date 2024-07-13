@@ -167,7 +167,7 @@ body{
 }
 
 .degrade {
-  font-weight: bold;
+  /*font-weight: bold;*/
   background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

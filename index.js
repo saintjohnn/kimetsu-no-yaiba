@@ -100,10 +100,11 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	btnUsernameText.classList.add("degrade");
-	//const text = btnUsernameText.textContent;
-	//const text1 = text.slice(0, 11);
-	//const text2 = text.slice(11);
+	const text = btnUsernameText.textContent;
+	const text1 = text.slice(0, 11);
+	const text2 = text[11];
+	const text3 = text[12];
+	const text4 = text.slice[13];
 
-	//btnUsernameText.innerHTML = `${text1}<span class="degrade">${text2}</span>`;
+	btnUsernameText.innerHTML = `${text1}<span class="degrade">${text2}${text3}${text4}</span>`;
 }
