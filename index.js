@@ -44,14 +44,24 @@ modes.addEventListener("click", () => {
 	if (!localStorage.getItem("dark")) {
 		localStorage.setItem("dark", "mode");
 		document.body.classList.add("modes--dark");
+		localStorage.setItem("white", "gradient");
 	} else {
 		localStorage.removeItem("dark");
 		document.body.classList.remove("modes--dark");
+		localStorage.removeItem("white");
 	}
 });
 
 if (localStorage.getItem("dark")) {
 	document.body.classList.add("modes--dark");
+}
+
+if (
+	localStorage.getItem("white") &&
+	btnUsernameText &&
+	btnUsernameText.innerText.length > 11
+) {
+	btnUsernameText.classList.add("--btn-username-gradient-white");
 }
 
 const totalUsers = localStorage.length;
@@ -99,6 +109,10 @@ if (btnLogout) {
 	});
 }
 
-if (btnUsernameText && btnUsernameText.innerText.length > 11) {
+if (
+	btnUsernameText &&
+	btnUsernameText.innerText.length > 11 &&
+	!localStorage.getItem("white")
+) {
 	btnUsernameText.classList.add("--btn-username-gradient");
 }
