@@ -104,3 +104,10 @@ if (btnUsernameText) {
 		btnUsernameText.classList.add("--btn-username-gradient");
 	}
 }
+
+if (btnUsernameText && localStorage.getItem("dark")) {
+	if (btnUsernameText.innerText.length > 11) {
+		btnUsernameText.classList.remove("--btn-username-gradient");
+		btnUsernameText.classList.add("--btn-username-gradient-white");
+	}
+}
