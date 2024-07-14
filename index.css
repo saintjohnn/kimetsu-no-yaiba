@@ -325,23 +325,30 @@ body{
   font-size: 5.5rem;
 }
 
-@media (max-width: 1360px){
+@media (max-width: 1295px){
+  /*
   .header__navigation-item{
     font-size: 1.1rem;
   }
+  */
+  .header__title{
+    font-size: 1.4rem;
+  }
+  /*
   .btn-login, .btn-register{
     width: fit-content;
     padding: 10px;
     font-size: 1.1rem;
   }
+  */
 }
-
+/*
 @media(max-width:1231px){
   .header__title{
     font-size: 1.4rem;
   }
 }
-
+*/
 @media (max-width: 1154px){
   .main-content{
     width: 70%;
