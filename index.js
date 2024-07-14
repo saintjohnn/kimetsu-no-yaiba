@@ -100,4 +100,12 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
+	const text = btnUsernameText.textContent;
+
+	const part1 = text.slice(0, 11);
+	const part2 = text[11];
+	const part3 = text[12];
+	const part4 = text[13];
+
+	btnUsernameText.innerHTML = `${part1}<span class="b1">${part2}</span><span class="b2">${part3}</span><span class="b3">${part4}</span>`;
 }
