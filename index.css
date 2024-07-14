@@ -163,8 +163,9 @@ body{
 }
 
 .fade-text {
-  mask-image: linear-gradient(to right, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  display: inline-block;
+  mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.25) 70%, transparent 80%);
+  -webkit-mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.25) 70%, transparent 80%);
 }
 
 .btn-username__text{
