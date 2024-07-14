@@ -74,7 +74,7 @@ loginButton.addEventListener("click", () => {
 		alertMessageEmptyFields.innerHTML = "";
 	}
 
-	if (!localStorage.getItem(email.value)) {
+	if (!localStorage.getItem(email.value) && email.value.includes("@")) {
 		alertUserEmail.classList.add("alert-user-email");
 		alertUserEmail.innerHTML = "este email não existe";
 	} else {
