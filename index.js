@@ -61,13 +61,6 @@ const urlParams = new URLSearchParams(queryString);
 const userEmail = urlParams.get("email");
 const url = window.location.href;
 
-//const registerUsers = [];
-/*
-for (let i = 0; i < totalUsers; i++) {
-	registerUsers.push(localStorage.key(i));
-}
-*/
-
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
@@ -79,7 +72,6 @@ if (url.includes("?email=")) {
 	setDisplay([btnLogin, btnRegister], "none");
 	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
 	localStorage.setItem("save", `${localStorage.getItem(userEmail)}.`);
-	//localStorage.setItem(`${userEmail}.`, `${localStorage.getItem(userEmail)}.`);
 }
 
 if (localStorage.getItem("save")) {
@@ -90,7 +82,6 @@ if (localStorage.getItem("save")) {
 
 if (btnLogout) {
 	btnLogout.addEventListener("click", () => {
-		/*localStorage.removeItem("login");*/
 		setDisplay([btnUsername, btnLogout], "none");
 		setDisplay([btnLogin, btnRegister], "flex");
 
@@ -101,15 +92,4 @@ if (btnLogout) {
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	btnUsernameText.classList.add("fade-text");
-
-	/*
-	const text = btnUsernameText.textContent;
-
-	const part1 = text.slice(0, 11);
-	const part2 = text[11];
-	const part3 = text[12];
-	const part4 = text[13];
-
-	btnUsernameText.innerHTML = `<span class="solid-text">${part1}</span><span class="lighter-text">${part2}</span><span class="even-lighter-text">${part3}</span><span class="transparent-text">${part4}</span>`;
-	*/
 }

@@ -3,8 +3,6 @@
 body{
   min-height: 100vh;
   min-width: 413px;
-  /*background: #202024;*/
-  /*color: rgb(214, 214, 214);*/
   background: whitesmoke;
   border-color: black;
   color: black;
@@ -148,13 +146,10 @@ body{
   width: fit-content;
   max-width: 142px;
   height: 50px;
-  /*padding: 10px;*/
   font-family: "roadstore", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   border: 0;
-  /*border: 2px solid inherit;*/
-  /*border-radius: 6px;*/
   outline: none;
   color: inherit;
   background: transparent;
@@ -326,30 +321,12 @@ body{
 }
 
 @media (max-width: 1295px){
-  /*
-  .header__navigation-item{
-    font-size: 1.1rem;
-  }
-  */
-  .header__title{
-    font-size: 1.4rem;
-  }
-  /*
-  .btn-login, .btn-register{
-    width: fit-content;
-    padding: 10px;
-    font-size: 1.1rem;
-  }
-  */
-}
-/*
-@media(max-width:1231px){
   .header__title{
     font-size: 1.4rem;
   }
 }
-*/
-@media (max-width: 1145px){
+
+@media (max-width: 1120px){
   .main-content{
     width: 70%;
   }
@@ -368,12 +345,10 @@ body{
     margin-right: 0;
     top: 0;
     right: -100%;
-    /*right: 0;*/
     border: 1px solid;
     border-color: inherit;
     color: inherit;
     transition: right .5s;
-    /*display: none;*/
   }
   .btn-login, .btn-username{
     position: absolute;
@@ -390,7 +365,7 @@ body{
     border-width: 3px;
   }
   .btn-logout{
-    left: 210px;
+    left: 155px;
   }
   .show-menu{
     display: flex;

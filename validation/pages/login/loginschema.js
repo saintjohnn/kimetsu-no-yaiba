@@ -1,5 +1,3 @@
-/*const formLogin = document.querySelector("[name=login-form]");*/
-
 const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
 const alertMessageEmail = document.querySelector(
