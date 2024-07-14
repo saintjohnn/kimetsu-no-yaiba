@@ -103,7 +103,9 @@ if (btnUsernameText && btnUsernameText.innerText.length > 11) {
 	const text = btnUsernameText.textContent;
 
 	const part1 = text.slice(0, 11);
-	const part2 = text.slice(11);
+	const part2 = text[11];
+	const part3 = text[12];
+	const part4 = text[13];
 
-	btnUsernameText.innerHTML = `${part1}<span class="fade-text">${part2}</span>`;
+	btnUsernameText.innerHTML = `<span class="solid-text">${part1}</span><span class="lighter-text">${part2}</span><span class="even-lighter-text">${part3}</span><span class="transparent-text">${part4}</span>`;
 }
