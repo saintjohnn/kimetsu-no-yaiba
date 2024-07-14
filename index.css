@@ -162,28 +162,10 @@ body{
   overflow: hidden;
 }
 
-/*
 .fade-text {
   display: inline-block;
-  mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.25) 70%, transparent 80%);
-  -webkit-mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.25) 70%, transparent 80%);
-}
-*/
-
-.solid-text {
-  opacity: 1;
-}
-
-.lighter-text {
-  opacity: 0.75; /* Ajuste conforme necessário */
-}
-
-.even-lighter-text {
-  opacity: 0.5; /* Ajuste conforme necessário */
-}
-
-.transparent-text {
-  opacity: 0.25; /* Ajuste conforme necessário */
+  mask-image: linear-gradient(to right, black 0%, black 70%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.25) 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 70%, rgba(0, 0, 0, 0.5) 80%, rgba(0, 0, 0, 0.25) 90%, transparent 100%);
 }
 
 .btn-username__text{
