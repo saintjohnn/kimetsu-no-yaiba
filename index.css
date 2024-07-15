@@ -330,7 +330,7 @@ body{
   }
 }
 
-@media (max-width: 1140px){
+@media (max-width: 1125px){
   .main-content{
     width: 70%;
   }
@@ -385,8 +385,7 @@ body{
   .modes{
     position: absolute;
     right: 0;
-    bottom: 0;
-    padding: 15px;
+    bottom: 15px;
     font-size: 2.5rem;   
   }
   .header__navigation-close-button{
@@ -435,6 +434,7 @@ body{
   .header__navigation{
     overflow-y: auto;
     width: 100%;
+    border-radius: 0;
   }
   .header__title, .header__menu-button{
     margin: 0;
