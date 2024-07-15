@@ -363,7 +363,7 @@ body{
   }
   .btn-register, .btn-logout{
     position: absolute;
-    margin: 10px 0 0 10px;
+    margin: 10px 0 0 15px;
     top: 0;
     left: 100px;
     border-width: 3px;
