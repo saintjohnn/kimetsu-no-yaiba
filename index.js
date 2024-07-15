@@ -100,20 +100,12 @@ if (btnLogout) {
 }
 
 if (btnUsernameText && btnUsernameText.innerText.length > 11) {
+	//btnUsernameText.classList.add("fade-text");
+
 	const text = btnUsernameText.textContent;
+
 	const part1 = text.slice(0, 13);
+	const part2 = text.slice(13);
 
-	btnUsernameText.innerHTML = part1;
-	btnUsernameText.classList.add("fade-text");
-
-	/*
-	const text = btnUsernameText.textContent;
-
-	const part1 = text.slice(0, 11);
-	const part2 = text[11];
-	const part3 = text[12];
-	const part4 = text[13];
-
-	btnUsernameText.innerHTML = `<span class="solid-text">${part1}</span><span class="lighter-text">${part2}</span><span class="even-lighter-text">${part3}</span><span class="transparent-text">${part4}</span>`;
-	*/
+	btnUsernameText.innerHTML = `<span class="fade-text">${part1}</span><span class="display-none">${part2}</span>`;
 }
