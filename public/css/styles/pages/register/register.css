@@ -3,11 +3,8 @@
 body{
   min-height: 100vh;
   min-width: 413px;
-  /*background: #202024;*/
-  /*color: rgb(214, 214, 214);*/
   background: whitesmoke;
   color: black;
-
 }
 
 .header{
@@ -20,41 +17,20 @@ body{
   border-right: 0;
   border-radius: 0;
   position: initial;
-}
-
-.modes{
-  font-size: 1.5rem;
-  cursor: pointer;
-  align-self: center;
-  margin-right: 20px;
-}
-
-.header--color-styles{
   background: inherit;
-}
-
-.header--border-syles{
   border-bottom: 1px solid;
   border-color: inherit;
 }
 
 .header__title{
   margin-left: 1.5rem;  
-}
-
-.header__title--font-style{
   font-family: 'Roadstore';
-}
-
-.header__title--user-select-style {
   user-select: none; 
 }
 
-.modes--dark{
-  background: #202024;
-  color: rgb(214, 214, 214);
-  border-color: rgb(163, 163, 163);
-}
+
+
+
 
 .header__navigation-close-button{
   display: none;
@@ -66,12 +42,21 @@ body{
   margin-left: auto;
 }
 
-.btn-main-page{
+.btn-navigation{
   padding: 10px;
   text-align: end;
+  font-family: "roadstore", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid inherit;
+  border-radius: 6px;
+  outline: none;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
 }
 
-.btn-main-page a{
+.btn-navigation a{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,32 +67,21 @@ body{
   font-size: 1.5rem;
 }
 
-.btn-main-page--font-style {
-  font-family: "roadstore", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.btn-main-page--border-styles{
-  border: 2px solid inherit;
-  border-radius: 6px;
-  outline: none;
-}
-
-.btn-main-page--color-styles {
-  color: inherit;
-  background: transparent;
-}
-
-.btn-main-page--cursor-style{
+.modes{
+  font-size: 1.5rem;
   cursor: pointer;
+  align-self: center;
+  margin-right: 20px;
+}
+
+.modes--dark{
+  background: #202024;
+  color: rgb(214, 214, 214);
+  border-color: rgb(163, 163, 163);
 }
 
 .header__menu-button{
   display: none;
-}
-
-.header__menu-button--font-style{
   font-size: 2.5rem;
 }
 
@@ -276,12 +250,10 @@ body{
     margin-right: 0;
     top: 0;
     right: -100%;
-    /*right: 0;*/
     border: 1px solid;
     border-color: inherit;
     color: inherit;
     transition: all .5s;
-    /*display: none;*/
     z-index: 99;
   }
   .header__navigation > :nth-child(1){

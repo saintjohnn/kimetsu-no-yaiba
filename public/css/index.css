@@ -22,12 +22,7 @@ body{
   justify-content: space-between;
   position: sticky;
   top: 0;
-}
-.header--color-styles{
   background: inherit;
-}
-
-.header--border-syles{
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   border: 1px solid;
@@ -35,14 +30,8 @@ body{
 }
 
 .header__title{
-  margin-left: 1.5rem;  
-}
-
-.header__title--font-style{
+  margin-left: 1.5rem; 
   font-family: 'Roadstore';
-}
-
-.header__title--user-select-style {
   user-select: none; 
 }
 
@@ -54,9 +43,6 @@ body{
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.header__navigation-list--list-style{
   list-style: none;
 }
 
@@ -71,16 +57,10 @@ body{
 
 .header__navigation-item{
   position: relative;
-}
-
-.header__navigation-item--font-style{
   text-decoration: none;
   font-size: 1rem;
   font-family: 'Roadstore';
   font-weight: 700;
-}
-
-.header__navigation-item--color{
   color: inherit;
 }
 
@@ -157,16 +137,6 @@ body{
   overflow: hidden;
 }
 
-.display-none{
-  display: none;
-}
-
-.fade-text {
-  display: inline-block;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 90%);
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 90%);
-}
-
 .btn-username__text{
   color: inherit;
 }
@@ -182,6 +152,16 @@ body{
 .btn-login a, .btn-register a, .btn-logout a, .btn-username a{
   text-decoration: none;
   color: inherit;
+}
+
+.display-none{
+  display: none;
+}
+
+.fade-text {
+  display: inline-block;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 90%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0.8) 70%, rgba(0, 0, 0, 0.6) 75%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 85%, rgba(0, 0, 0, 0) 90%);
 }
 
 .modes{
@@ -203,11 +183,8 @@ body{
 }
 
 .header__menu-button{
-  display: none;
-}
-
-.header__menu-button--font-style{
   font-size: 2.5rem;
+  display: none;
 }
 
 .main-content{
