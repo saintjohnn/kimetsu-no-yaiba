@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'Roadstore';
-  src: local('Roadstore'), url('../../fonts/roadstore.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter'), url('../../fonts/InterVariable.ttf') format('truetype');
-}

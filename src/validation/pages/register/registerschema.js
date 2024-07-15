@@ -1,4 +1,5 @@
-const registerForm = document.querySelector("[name=register-form]");
+import validateSchemas from "../../../utils/validate.js";
+
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
@@ -32,19 +33,6 @@ const inputContainerPassword = document.querySelector(
 const inputContainerConfirmPassword = document.querySelector(
 	".input-container--confirm-password",
 );
-
-function validateSchemas(schema, inputName, alertMessage, inputContainer) {
-	const validate = schema.safeParse(inputName["value"]);
-
-	if (validate.success === false) {
-		alertMessage.style.display = "inline";
-		alertMessage.innerHTML = validate.error.issues[0].message;
-		inputContainer.style.borderBottomColor = "red";
-	} else {
-		inputContainer.style.borderBottomColor = "black";
-		alertMessage.innerHTML = "";
-	}
-}
 
 username.addEventListener("input", () => {
 	const schemaUsername = Zod.string()

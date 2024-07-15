@@ -1,3 +1,5 @@
+import validateSchemas from "../../../utils/validate.js";
+
 const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
 const alertMessageEmail = document.querySelector(
@@ -13,19 +15,6 @@ const inputContainerPassword = document.querySelector(
 const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
 const alertUserEmail = document.querySelector(".alert-user-email");
 const loginButton = document.querySelector(".btn-login-account");
-
-function validateSchemas(schema, inputName, alertMessage, inputContainer) {
-	const validate = schema.safeParse(inputName["value"]);
-
-	if (validate.success === false) {
-		alertMessage.style.display = "inline";
-		alertMessage.innerHTML = validate.error.issues[0].message;
-		inputContainer.style.borderBottomColor = "red";
-	} else {
-		inputContainer.style.borderBottomColor = "black";
-		alertMessage.innerHTML = "";
-	}
-}
 
 email.addEventListener("input", () => {
 	const schemaEmail = Zod.string()
