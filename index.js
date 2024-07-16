@@ -56,10 +56,10 @@ if (localStorage.getItem("dark")) {
 
 const totalUsers = localStorage.length;
 
-const queryString = window.location.search;
+const queryString = location.search;
 const urlParams = new URLSearchParams(queryString);
 const userEmail = urlParams.get("email");
-const url = window.location.href;
+const url = location.href;
 
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
