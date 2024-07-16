@@ -35,37 +35,70 @@
   </header>
 
   <main class="main-content">
+
       <section class="login">
+
         <div class="login__box">
+
           <h2 class="login__title">Login</h2>
+
           <form class="form" autocomplete="off" name="login-form" method="post">
-            <section class="input-container input-container--email">
+
+            <section class="input-container">
+
               <i class="ri-mail-line icon"></i>
+
               <input type="email" class="input-container__user-input" id="iemail" name="email">
+
               <span class="input-container__user-input__alert-message-email"></span>
+
               <label for="iemail" id="email-label" class="input-container__label">Email</label>
+
             </section>
-            <section class="input-container input-container--password">
+
+            <section class="input-container">
+
               <i class="ri-lock-line icon"></i>
+
               <input type="password" class="input-container__user-input" id="ipassword" name="password">
+
               <span class="input-container__user-input__alert-message-password"></span>
+
               <label for="ipassword" id="password-label" class="input-container__label">Password</label>
+
             </section>
+
             <section class="form__remember-forgot">
+
               <label class="form__remember-forgot__login">
+
                 <input type="checkbox" name="remember" class="form__remember-forgot__login">Remember me
+
               </label>
+
               <a href="#" class="form__remember-forgot__password">Forgot password?</a>
+
             </section>
+
             <span class="alert-empty-fields"></span>
+
             <span class="alert-user-email"></span>
+
             <button type="button" class="btn-login-account">Login</button>
+
             <section class="login-register">
+
               <p>Don't have an account? <a href="../register/register.html">Register</a></p>
+
             </section>
+
           </form>
+
         </div>
+
       </section>
+
   </main>
+  
 </body>
 </html>

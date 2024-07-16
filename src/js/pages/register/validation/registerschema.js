@@ -7,21 +7,19 @@ const confirmPassword = document.querySelector("[name=confirm-password]");
 const checkbox = document.querySelector("[name=agree]");
 const submitButton = document.querySelector(".btn-register-account");
 const alertMessageUsername = document.querySelector(
-	".input-container__user-input__alert-message-username",
+	".input-container__alert-message-username",
 );
 const alertMessageEmail = document.querySelector(
-	".input-container__user-input__alert-message-email",
+	".input-container__alert-message-email",
 );
 
 const alertMessagePassword = document.querySelector(
-	".input-container__user-input__alert-message-password",
+	".input-container__alert-message-password",
 );
 const alertMessageConfirmPassword = document.querySelector(
-	".input-container__user-input__alert-message-confirm-password",
+	".input-container__alert-message-confirm-password",
 );
-const alertMessageAgree = document.querySelector(
-	".input-container__user-input__alert-agree",
-);
+const alertMessageAgree = document.querySelector(".form__alert-agree");
 const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
 const inputContainerUsername = document.querySelector(
 	".input-container--username",

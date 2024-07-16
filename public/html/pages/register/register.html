@@ -50,7 +50,7 @@
 
     </nav>
 
-    <div class="header__menu-button header__menu-button--font-style">
+    <div class="header__menu-button">
 
       <i class="ri-menu-line"></i>
 
@@ -73,7 +73,7 @@
             <i class="ri-user-line icon"></i>
 
             <input type="text" class="input-container__user-input" id="i-text" name="text">
-            <span class="input-container__user-input__alert-message-username"></span>
+            <span class="input-container__alert-message-username"></span>
 
             <label for="i-text" id="username-label" class="input-container__label">Username</label>
 
@@ -84,7 +84,7 @@
             <i class="ri-mail-line icon"></i>
 
             <input type="email" class="input-container__user-input" id="i-email" name="email">
-            <span class="input-container__user-input__alert-message-email"></span>
+            <span class="input-container__alert-message-email"></span>
 
             <label for="i-email" id="email-label" class="input-container__label">Email</label>
 
@@ -95,7 +95,7 @@
             <i class="ri-lock-line icon"></i>
 
             <input type="password" class="input-container__user-input" id="i-password" name="password">
-            <span class="input-container__user-input__alert-message-password"></span>
+            <span class="input-container__alert-message-password"></span>
 
             <label for="i-password" id="password-label" class="input-container__label">Create password</label>
 
@@ -106,7 +106,7 @@
             <i class="ri-lock-line icon"></i>
 
             <input type="password" class="input-container__user-input" id="i-confirm-password" name="confirm-password">              
-            <span class="input-container__user-input__alert-message-confirm-password"></span>
+            <span class="input-container__alert-message-confirm-password"></span>
 
             <label for="i-confirm-password" id="confirm-password-label" class="input-container__label">Confirm password</label>
 
@@ -117,10 +117,15 @@
             <label class="form__agree-login">
 
               <input type="checkbox" name="agree" class="form__agree-login-terms">By creating an account, you agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+
             </label>
+
           </section>
-          <span class="input-container__user-input__alert-agree"></span>
+
+          <span class="form__alert-agree"></span>
+
           <span class="alert-empty-fields"></span>
+
           <button type="button" class="btn-register-account">Register</button>
 
           <section class="form__login">
