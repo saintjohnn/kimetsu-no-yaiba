@@ -1,9 +1,13 @@
 {
-  "dependencies": {
-    "zod": "^3.23.8"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3"
-  }
+	"dependencies": {
+		"json-server": "^1.0.0-beta.1",
+		"zod": "^3.23.8"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3"
+	},
+	"scripts": {
+		"server-json": "json-server --watch db/db.json"
+	}
 }

@@ -168,7 +168,38 @@ submitButton.addEventListener("click", (event) => {
 		alertMessageUsername.innerHTML === "" &&
 		alertMessageAgree.innerHTML === ""
 	) {
-		localStorage.setItem(email.value.toString(), username.value);
-		window.location.href = `https://saintjohnn.github.io/kimetsu-no-yaiba/?email=${encodeURIComponent(email.value)}`;
+		const configs = new Request("http://localhost:3000/users", {
+			method: "POST",
+			body: JSON.stringify({
+				id: Date.now(),
+				username: username.value,
+				email: email.value,
+				password: password.value,
+			}),
+			headers: {
+				"Content-type": "application/json",
+			},
+		});
+
+		const userData = async () => {
+			try {
+				const datas = await fetch(configs);
+
+				if (!datas.ok) {
+					throw new Error(`HTTP error status: ${datas.status}`);
+				}
+
+				const userDatas = await datas.json();
+				console.log(`success: ${userDatas}`);
+
+				localStorage.setItem(email.value, username.value);
+
+				location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+			} catch (error) {
+				console.log(`error: ${error}`);
+			}
+		};
+
+		userData();
 	}
 });
