@@ -60,6 +60,17 @@ function setDisplay(elements, displayStyle) {
 	});
 }
 
+function checkUsernameTextLength() {
+	if (btnUsernameText && btnUsernameText.innerText.length > 11) {
+		const text = btnUsernameText.textContent;
+
+		const part1 = text.slice(0, 13);
+		const part2 = text.slice(13);
+
+		btnUsernameText.innerHTML = `<span class="fade-text">${part1}</span><span class="display-none">${part2}</span>`;
+	}
+}
+
 if (localStorage.getItem("userEmail")) {
 	const userLoginData = async () => {
 		const userData = await fetch("http://localhost:3000/users");
@@ -68,6 +79,7 @@ if (localStorage.getItem("userEmail")) {
 		parsedUserData.some((datas) => {
 			if (localStorage.getItem("userEmail") === datas.email) {
 				btnUsernameText.innerHTML = datas.username;
+				checkUsernameTextLength();
 			}
 		});
 	};
@@ -76,8 +88,6 @@ if (localStorage.getItem("userEmail")) {
 
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-
-	//btnUsernameText.innerHTML = localStorage.getItem("username");
 }
 
 if (localStorage.getItem("username")) {
@@ -97,11 +107,4 @@ if (btnLogout) {
 	});
 }
 
-if (btnUsernameText && btnUsernameText.innerText.length > 11) {
-	const text = btnUsernameText.textContent;
-
-	const part1 = text.slice(0, 13);
-	const part2 = text.slice(13);
-
-	btnUsernameText.innerHTML = `<span class="fade-text">${part1}</span><span class="display-none">${part2}</span>`;
-}
+checkUsernameTextLength();
