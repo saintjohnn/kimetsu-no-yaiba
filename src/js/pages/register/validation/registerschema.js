@@ -190,9 +190,10 @@ submitButton.addEventListener("click", (event) => {
 				}
 
 				const userDatas = await datas.json();
+
 				console.log(`success: ${userDatas}`);
 
-				localStorage.setItem(email.value, username.value);
+				localStorage.setItem("username", username.value);
 
 				location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 			} catch (error) {

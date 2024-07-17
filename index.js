@@ -54,30 +54,16 @@ if (localStorage.getItem("dark")) {
 	document.body.classList.add("modes--dark");
 }
 
-const totalUsers = localStorage.length;
-
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const userEmail = urlParams.get("email");
-const url = window.location.href;
-
 function setDisplay(elements, displayStyle) {
 	elements.forEach((element) => {
 		element.style.display = displayStyle;
 	});
 }
 
-if (url.includes("?email=")) {
+if (localStorage.getItem("username")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = localStorage.getItem(userEmail);
-	localStorage.setItem("save", `${localStorage.getItem(userEmail)}.`);
-}
-
-if (localStorage.getItem("save")) {
-	setDisplay([btnUsername, btnLogout], "flex");
-	setDisplay([btnLogin, btnRegister], "none");
-	btnUsernameText.innerHTML = localStorage.getItem("save").replace(".", "");
+	btnUsernameText.innerHTML = localStorage.getItem("username");
 }
 
 if (btnLogout) {
@@ -85,8 +71,8 @@ if (btnLogout) {
 		setDisplay([btnUsername, btnLogout], "none");
 		setDisplay([btnLogin, btnRegister], "flex");
 
-		localStorage.removeItem("save");
-		window.location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+		localStorage.removeItem("username");
+		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	});
 }
 
