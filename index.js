@@ -67,7 +67,7 @@ if (localStorage.getItem("userEmail")) {
 
 		z.some((datas) => {
 			if (localStorage.getItem("userEmail") === datas.email) {
-				btnUsernameText.innerHTML = datas.username;
+				//btnUsernameText.innerHTML = datas.username;
 			}
 		});
 	};
