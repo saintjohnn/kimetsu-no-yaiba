@@ -61,18 +61,18 @@ function setDisplay(elements, displayStyle) {
 }
 
 if (localStorage.getItem("userEmail")) {
-	const x = async () => {
-		const y = await fetch("http://localhost:3000/users");
-		const z = await y.json();
+	const userLoginData = async () => {
+		const userData = await fetch("http://localhost:3000/users");
+		const parsedUserData = await userData.json();
 
-		z.some((datas) => {
+		parsedUserData.some((datas) => {
 			if (localStorage.getItem("userEmail") === datas.email) {
-				//btnUsernameText.innerHTML = datas.username;
+				btnUsernameText.innerHTML = datas.username;
 			}
 		});
 	};
 
-	x();
+	userLoginData();
 
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
