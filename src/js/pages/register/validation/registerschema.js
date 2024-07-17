@@ -20,7 +20,12 @@ const alertMessageConfirmPassword = document.querySelector(
 	".input-container__alert-message-confirm-password",
 );
 const alertMessageAgree = document.querySelector(".form__alert-agree");
-const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
+const alertMessageEmptyFields = document.querySelector(
+	".form__alert-empty-fields",
+);
+const alertMessageEmailAlreadyExists = document.querySelector(
+	".form__alert-email-already-exists",
+);
 const inputContainerUsername = document.querySelector(
 	".input-container--username",
 );
@@ -127,6 +132,21 @@ confirmPassword.addEventListener("input", () => {
 });
 
 submitButton.addEventListener("click", (event) => {
+	const x = async () => {
+		const y = await fetch("http://localhost:3000/users");
+		const z = await y.json();
+
+		const users = z.some((datas) => email.value === datas.email);
+
+		if (users) {
+			alertMessageEmailAlreadyExists.innerHTML = "esse email ja existe";
+		} else {
+			alertMessageEmailAlreadyExists.innerHTML = "";
+		}
+	};
+
+	x();
+
 	if (!checkbox.checked) {
 		alertMessageAgree.classList.add("input-container__user-input__alert-agree");
 		alertMessageAgree.innerHTML =
@@ -153,7 +173,7 @@ submitButton.addEventListener("click", (event) => {
 	const verifyInputValues = inputValuesSchema.safeParse(inputValues);
 
 	if (verifyInputValues.success === false) {
-		alertMessageEmptyFields.classList.add("alert-empty-fields");
+		alertMessageEmptyFields.classList.add("form__alert-empty-fields");
 		alertMessageEmptyFields.innerHTML =
 			"preencha todos os campos antes do envio";
 	} else {
@@ -166,7 +186,8 @@ submitButton.addEventListener("click", (event) => {
 		alertMessagePassword.innerHTML === "" &&
 		alertMessageConfirmPassword.innerHTML === "" &&
 		alertMessageUsername.innerHTML === "" &&
-		alertMessageAgree.innerHTML === ""
+		alertMessageAgree.innerHTML === "" &&
+		alertMessageEmailAlreadyExists.innerHTML === ""
 	) {
 		const configs = new Request("http://localhost:3000/users", {
 			method: "POST",
@@ -181,17 +202,17 @@ submitButton.addEventListener("click", (event) => {
 			},
 		});
 
-		const userData = async () => {
+		const userRegistrationData = async () => {
 			try {
-				const datas = await fetch(configs);
+				const userData = await fetch(configs);
 
-				if (!datas.ok) {
+				if (!userData.ok) {
 					throw new Error(`HTTP error status: ${datas.status}`);
 				}
 
-				const userDatas = await datas.json();
+				const parsedUserData = await userData.json();
 
-				console.log(`success: ${userDatas}`);
+				console.log(`success: ${parsedUserData}`);
 
 				localStorage.setItem("username", username.value);
 
@@ -201,6 +222,6 @@ submitButton.addEventListener("click", (event) => {
 			}
 		};
 
-		userData();
+		userRegistrationData();
 	}
 });

@@ -60,6 +60,26 @@ function setDisplay(elements, displayStyle) {
 	});
 }
 
+if (localStorage.getItem("userEmail")) {
+	const x = async () => {
+		const y = await fetch("http://localhost:3000/users");
+		const z = await y.json();
+
+		z.some((datas) => {
+			if (localStorage.getItem("userEmail") === datas.email) {
+				btnUsernameText.innerHTML = datas.username;
+			}
+		});
+	};
+
+	x();
+
+	setDisplay([btnUsername, btnLogout], "flex");
+	setDisplay([btnLogin, btnRegister], "none");
+
+	//btnUsernameText.innerHTML = localStorage.getItem("username");
+}
+
 if (localStorage.getItem("username")) {
 	setDisplay([btnUsername, btnLogout], "flex");
 	setDisplay([btnLogin, btnRegister], "none");
@@ -72,6 +92,7 @@ if (btnLogout) {
 		setDisplay([btnLogin, btnRegister], "flex");
 
 		localStorage.removeItem("username");
+		localStorage.removeItem("userEmail");
 		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	});
 }

@@ -41,6 +41,24 @@ password.addEventListener("input", () => {
 });
 
 loginButton.addEventListener("click", () => {
+	const registeredAccounts = async () => {
+		const registeredAccountData = await fetch("http://localhost:3000/users");
+		const parsedRegisteredAccountData = await registeredAccountData.json();
+
+		const checkEmail = parsedRegisteredAccountData.some(
+			(data) => email.value === data.email,
+		);
+
+		if (!checkEmail && email.value.length > 1) {
+			alertUserEmail.classList.add("alert-user-email");
+			alertUserEmail.innerHTML = "este email não existe";
+		} else {
+			alertUserEmail.innerHTML = "";
+		}
+	};
+
+	registeredAccounts();
+
 	const inputValues = {
 		email: email.value,
 		password: password.value,
@@ -61,19 +79,13 @@ loginButton.addEventListener("click", () => {
 		alertMessageEmptyFields.innerHTML = "";
 	}
 
-	if (!localStorage.getItem(email.value) && email.value.includes("@")) {
-		alertUserEmail.classList.add("alert-user-email");
-		alertUserEmail.innerHTML = "este email não existe";
-	} else {
-		alertUserEmail.innerHTML = "";
-	}
-
 	if (
 		alertMessageEmptyFields.innerHTML === "" &&
 		alertMessageEmail.innerHTML === "" &&
 		alertMessagePassword.innerHTML === "" &&
 		alertUserEmail.innerHTML === ""
 	) {
-		window.location.href = `https://saintjohnn.github.io/kimetsu-no-yaiba/?email=${encodeURIComponent(email.value)}`;
+		localStorage.setItem("userEmail", email.value);
+		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
 });

@@ -161,7 +161,7 @@ body{
   display: none;
 }
 
-.input-container__user-input__alert-agree, .alert-empty-fields{
+.input-container__user-input__alert-agree, .form__alert-empty-fields, .form__alert-email-already-exists{
   text-align: center;
   font-family: 'Inter';
   font-size: .8rem;
