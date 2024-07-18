@@ -11,6 +11,12 @@
       "username": "john",
       "email": "john@gmail.com",
       "password": "$2a$10$dNzTmS0d4zzDXbxDcfD7G.iHP0h3F1pK/a.wFAHSb107gojMPCy.O"
+    },
+    {
+      "id": "07fb254d-1a8e-4bf7-9332-d4bfe242a7bf",
+      "username": "saintjohnpeterxxx",
+      "email": "saint@gmail.com",
+      "password": "$2a$10$Mp78cBSIzLZWJTWMKareXuGQqpsxiifbxDl6oMKO0Nu89NDtsU1yy"
     }
   ]
 }

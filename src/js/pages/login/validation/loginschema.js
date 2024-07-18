@@ -64,9 +64,11 @@ loginButton.addEventListener("click", async (event) => {
 		const registeredPasswordsData = await fetch("http://localhost:3000/users");
 		const parsedregisteredPasswordsData = await registeredPasswordsData.json();
 
-		const checkPassword = parsedregisteredPasswordsData.some((datas) =>
-			bcryptjs.compareSync(password.value, datas.password),
-		);
+		const checkPassword = parsedregisteredPasswordsData.some((datas) => {
+			if (email.value === datas.email) {
+				bcryptjs.compareSync(password.value, datas.password);
+			}
+		});
 
 		if (!checkPassword && password.value.length > 0 && email.value.length > 1) {
 			alertUserPassword.innerHTML = "senha incorreta";

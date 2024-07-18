@@ -199,7 +199,7 @@ submitButton.addEventListener("click", async (event) => {
 				id: crypto.randomUUID(),
 				username: username.value,
 				email: email.value,
-				password: bcryptjs.hashSync(password.value, 10),
+				password: bcryptjs.hashSync(password.value),
 			}),
 			headers: {
 				"Content-type": "application/json",
