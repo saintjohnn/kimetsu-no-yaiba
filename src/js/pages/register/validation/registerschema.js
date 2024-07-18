@@ -1,5 +1,4 @@
 import validateSchemas from "../../../utils/validate.js";
-import bcrypt from "https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm";
 
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
