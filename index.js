@@ -73,15 +73,17 @@ function checkUsernameTextLength() {
 
 if (localStorage.getItem("userEmail")) {
 	const userLoginData = async () => {
-		const userData = await fetch("http://localhost:3000/users");
-		const parsedUserData = await userData.json();
+		try {
+			const userData = await fetch("http://localhost:3000/users");
+			const parsedUserData = await userData.json();
 
-		parsedUserData.some((datas) => {
-			if (localStorage.getItem("userEmail") === datas.email) {
-				btnUsernameText.innerHTML = datas.username;
-				checkUsernameTextLength();
-			}
-		});
+			parsedUserData.some((datas) => {
+				if (localStorage.getItem("userEmail") === datas.email) {
+					btnUsernameText.innerHTML = datas.username;
+					checkUsernameTextLength();
+				}
+			});
+		} catch (error) {}
 	};
 
 	userLoginData();

@@ -1,4 +1,5 @@
 import validateSchemas from "../../../utils/validate.js";
+import bcrypt from "https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm";
 
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
@@ -131,21 +132,24 @@ confirmPassword.addEventListener("input", () => {
 	);
 });
 
-submitButton.addEventListener("click", (event) => {
-	const x = async () => {
-		const y = await fetch("http://localhost:3000/users");
-		const z = await y.json();
+submitButton.addEventListener("click", async (event) => {
+	const verifyDbAccounts = async () => {
+		const dbAccounts = await fetch("http://localhost:3000/users");
+		const parsedDbAccounts = await dbAccounts.json();
 
-		const users = z.some((datas) => email.value === datas.email);
+		const usersAccounts = parsedDbAccounts.some(
+			(datas) => email.value === datas.email,
+		);
 
-		if (users) {
+		if (usersAccounts) {
 			alertMessageEmailAlreadyExists.innerHTML = "esse email ja existe";
+			event.preventDefault();
 		} else {
 			alertMessageEmailAlreadyExists.innerHTML = "";
 		}
 	};
 
-	x();
+	await verifyDbAccounts();
 
 	if (!checkbox.checked) {
 		alertMessageAgree.classList.add("input-container__user-input__alert-agree");
@@ -192,10 +196,10 @@ submitButton.addEventListener("click", (event) => {
 		const configs = new Request("http://localhost:3000/users", {
 			method: "POST",
 			body: JSON.stringify({
-				id: Date.now(),
+				id: crypto.randomUUID(),
 				username: username.value,
 				email: email.value,
-				password: password.value,
+				password: bcrypt.hash(password.value),
 			}),
 			headers: {
 				"Content-type": "application/json",
@@ -222,6 +226,6 @@ submitButton.addEventListener("click", (event) => {
 			}
 		};
 
-		userRegistrationData();
+		await userRegistrationData();
 	}
 });
