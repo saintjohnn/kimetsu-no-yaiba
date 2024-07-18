@@ -19,43 +19,43 @@
       "password": "123abc"
     },
     {
-      "id": 1721250219081,
+      "id": "1721250219081",
       "username": "kkkkkkkkkkkkkkkkkkkkkkkkkkkk",
       "email": "joao@gmail.com",
       "password": "123abc"
     },
     {
-      "id": 1721250383321,
+      "id": "1721250383321",
       "username": "dddddddddddddddddddddddddddd",
       "email": "joaoa@gmail.com",
       "password": "asd222"
     },
     {
-      "id": 1721250488465,
+      "id": "1721250488465",
       "username": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "email": "notfound@gmail.com",
       "password": "123lll"
     },
     {
-      "id": 1721252326153,
+      "id": "1721252326153",
       "username": "isaujhuaihusahusahusahussaas",
       "email": "w5wd48@gmail.com",
       "password": "123abc"
     },
     {
-      "id": 1721252346233,
+      "id": "1721252346233",
       "username": "hdg",
       "email": "kk@gmail.com",
       "password": "123abc"
     },
     {
-      "id": 1721252370768,
+      "id": "1721252370768",
       "username": "ccccc",
       "email": "chs@gmail.com",
       "password": "123abc"
     },
     {
-      "id": 1721252635368,
+      "id": "1721252635368",
       "username": "UDDUSHUAH",
       "email": "udshsudhs@gmail.com",
       "password": "123abc"
@@ -73,7 +73,7 @@
       "password": "ddd333"
     },
     {
-      "id": 1721273121585,
+      "id": "1721273121585",
       "username": "ffffff",
       "email": "4f4f@gail.com",
       "password": "123aaa"
@@ -103,7 +103,7 @@
       "password": "444ttt"
     },
     {
-      "id": 1721273613915,
+      "id": "1721273613915",
       "username": "ffff",
       "email": "joao@gmail.com",
       "password": "fffrrr4"
@@ -173,6 +173,24 @@
       "username": "dddddd",
       "email": "yyyyyyy@gmail.com",
       "password": {}
+    },
+    {
+      "id": "be72fb7b-4e4e-44c3-9eaf-71780a32e52c",
+      "username": "eee",
+      "email": "123@gmail.com",
+      "password": {}
+    },
+    {
+      "id": "26310014-953d-44ef-8bad-959f976011ab",
+      "username": "ffffffffffffff",
+      "email": "fffffffffffffff@gmail.com",
+      "password": "$2a$10$07tKOWZmeCKQeKrz9KaWh.zzWsSIQzxzXv3d8Ahe1r2sl9nglzeka"
+    },
+    {
+      "id": "60fc35d1-36ed-4377-95e3-2cd34aa462d4",
+      "username": "dddhash",
+      "email": "hash@gmail.com",
+      "password": "$2a$10$sB05WwaIu0gOq8FqF.zwIudhYqfJ6gdAXObuPt79v49m5CJT5/p0e"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import validateSchemas from "../../../utils/validate.js";
+import bcryptjs from "https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm";
 
 const username = document.querySelector("[name=text]");
 const email = document.querySelector("[name=email]");
@@ -198,7 +199,7 @@ submitButton.addEventListener("click", async (event) => {
 				id: crypto.randomUUID(),
 				username: username.value,
 				email: email.value,
-				password: bcrypt.hash(password.value),
+				password: bcryptjs.hashSync(password.value),
 			}),
 			headers: {
 				"Content-type": "application/json",
