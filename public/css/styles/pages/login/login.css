@@ -148,7 +148,7 @@ body{
   display: none;
 }
 
-.input-container__user-input__alert-agree, .alert-empty-fields, .alert-user-email{
+.input-container__user-input__alert-agree, .alert-empty-fields, .alert-user-email, .alert-user-password{
   text-align: center;
   font-family: 'Inter';
   font-size: .8rem;

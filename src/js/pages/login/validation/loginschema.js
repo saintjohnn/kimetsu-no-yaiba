@@ -1,4 +1,5 @@
 import validateSchemas from "../../../utils/validate.js";
+import bcryptjs from "https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/+esm";
 
 const email = document.querySelector("[name=email]");
 const password = document.querySelector("[name=password]");
@@ -14,6 +15,7 @@ const inputContainerPassword = document.querySelector(
 );
 const alertMessageEmptyFields = document.querySelector(".alert-empty-fields");
 const alertUserEmail = document.querySelector(".alert-user-email");
+const alertUserPassword = document.querySelector(".alert-user-password");
 const loginButton = document.querySelector(".btn-login-account");
 
 email.addEventListener("input", () => {
@@ -40,7 +42,7 @@ password.addEventListener("input", () => {
 	);
 });
 
-loginButton.addEventListener("click", () => {
+loginButton.addEventListener("click", async (event) => {
 	const registeredAccounts = async () => {
 		const registeredAccountData = await fetch("http://localhost:3000/users");
 		const parsedRegisteredAccountData = await registeredAccountData.json();
@@ -49,41 +51,63 @@ loginButton.addEventListener("click", () => {
 			(data) => email.value === data.email,
 		);
 
-		if (!checkEmail && email.value.length > 1) {
-			alertUserEmail.classList.add("alert-user-email");
+		if (!checkEmail && email.value.length > 0) {
+			//alertUserEmail.classList.add("alert-user-email");
 			alertUserEmail.innerHTML = "este email não existe";
+			event.preventDefault();
 		} else {
 			alertUserEmail.innerHTML = "";
 		}
 	};
 
-	registeredAccounts();
+	const registeredPasswords = async () => {
+		const registeredPasswordsData = await fetch("http://localhost:3000/users");
+		const parsedregisteredPasswordsData = await registeredPasswordsData.json();
 
-	const inputValues = {
-		email: email.value,
-		password: password.value,
+		const checkPassword = parsedregisteredPasswordsData.some((datas) =>
+			bcryptjs.compareSync(password.value, datas.password),
+		);
+
+		if (!checkPassword && password.value.length > 0 && email.value.length > 1) {
+			alertUserPassword.innerHTML = "senha incorreta";
+			event.preventDefault();
+		} else {
+			alertUserPassword.innerHTML = "";
+		}
 	};
 
-	const inputValuesSchema = Zod.object({
-		email: Zod.string().min(1),
-		password: Zod.string().min(1),
-	});
+	const verifyFiels = () => {
+		const inputValues = {
+			email: email.value,
+			password: password.value,
+		};
 
-	const verifyInputValues = inputValuesSchema.safeParse(inputValues);
+		const inputValuesSchema = Zod.object({
+			email: Zod.string().min(1),
+			password: Zod.string().min(1),
+		});
 
-	if (verifyInputValues.success === false) {
-		alertMessageEmptyFields.classList.add("alert-empty-fields");
-		alertMessageEmptyFields.innerHTML =
-			"preencha todos os campos antes do envio";
-	} else {
-		alertMessageEmptyFields.innerHTML = "";
-	}
+		const verifyInputValues = inputValuesSchema.safeParse(inputValues);
+
+		if (verifyInputValues.success === false) {
+			alertMessageEmptyFields.innerHTML =
+				"preencha todos os campos antes do envio";
+			event.preventDefault();
+		} else {
+			alertMessageEmptyFields.innerHTML = "";
+		}
+	};
+
+	await registeredAccounts();
+	await registeredPasswords();
+	verifyFiels();
 
 	if (
 		alertMessageEmptyFields.innerHTML === "" &&
 		alertMessageEmail.innerHTML === "" &&
 		alertMessagePassword.innerHTML === "" &&
-		alertUserEmail.innerHTML === ""
+		alertUserEmail.innerHTML === "" &&
+		alertUserPassword.innerHTML === ""
 	) {
 		localStorage.setItem("userEmail", email.value);
 		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
