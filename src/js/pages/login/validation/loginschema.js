@@ -43,40 +43,7 @@ password.addEventListener("input", () => {
 });
 
 loginButton.addEventListener("click", async (event) => {
-	const registeredAccounts = async () => {
-		const registeredAccountData = await fetch("http://localhost:3000/users");
-		const parsedRegisteredAccountData = await registeredAccountData.json();
-
-		const checkEmail = parsedRegisteredAccountData.some(
-			(data) => email.value === data.email,
-		);
-
-		if (!checkEmail && email.value.length > 0) {
-			//alertUserEmail.classList.add("alert-user-email");
-			alertUserEmail.innerHTML = "este email não existe";
-			event.preventDefault();
-		} else {
-			alertUserEmail.innerHTML = "";
-		}
-	};
-
-	const registeredPasswords = async () => {
-		const registeredPasswordsData = await fetch("http://localhost:3000/users");
-		const parsedregisteredPasswordsData = await registeredPasswordsData.json();
-
-		const checkPassword = parsedregisteredPasswordsData.some((datas) => {
-			if (email.value === datas.email) {
-				bcryptjs.compareSync(password.value, datas.password);
-			}
-		});
-
-		if (!checkPassword && password.value.length > 0 && email.value.length > 1) {
-			alertUserPassword.innerHTML = "senha incorreta";
-			event.preventDefault();
-		} else {
-			alertUserPassword.innerHTML = "";
-		}
-	};
+	event.preventDefault();
 
 	const verifyFiels = () => {
 		const inputValues = {
@@ -94,16 +61,65 @@ loginButton.addEventListener("click", async (event) => {
 		if (verifyInputValues.success === false) {
 			alertMessageEmptyFields.innerHTML =
 				"preencha todos os campos antes do envio";
-			event.preventDefault();
+			return false;
 		} else {
 			alertMessageEmptyFields.innerHTML = "";
+			return true;
 		}
 	};
 
+	if (!verifyFiels()) return;
+
+	const registeredAccounts = async () => {
+		const registeredAccountData = await fetch("http://localhost:3000/users");
+		const parsedRegisteredAccountData = await registeredAccountData.json();
+
+		const checkEmail = parsedRegisteredAccountData.some(
+			(data) => email.value === data.email,
+		);
+
+		if (!checkEmail && email.value.length > 0) {
+			alertUserEmail.innerHTML = "este email não existe";
+			return false;
+		} else {
+			alertUserEmail.innerHTML = "";
+			return true;
+		}
+	};
+
+	const registeredPasswords = async () => {
+		const registeredPasswordsData = await fetch("http://localhost:3000/users");
+		const parsedregisteredPasswordsData = await registeredPasswordsData.json();
+
+		const checkPassword = parsedregisteredPasswordsData.some((datas) => {
+			if (email.value === datas.email) {
+				bcryptjs.compareSync(password.value, datas.password);
+			}
+		});
+
+		if (!checkPassword && password.value.length > 0 && email.value.length > 1) {
+			alertUserPassword.innerHTML = "senha incorreta";
+			return false;
+		} else {
+			alertUserPassword.innerHTML = "";
+			return true;
+		}
+	};
+
+	const emailIsValid = await registeredAccounts();
+	const passwordIsValid = await registeredPasswords();
+
+	if (emailIsValid && passwordIsValid) {
+		localStorage.setItem("userEmail", email.value);
+		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
+	}
+
+	/*
 	await registeredAccounts();
 	await registeredPasswords();
 	verifyFiels();
-
+	*/
+	/*
 	if (
 		alertMessageEmptyFields.innerHTML === "" &&
 		alertMessageEmail.innerHTML === "" &&
@@ -114,4 +130,5 @@ loginButton.addEventListener("click", async (event) => {
 		localStorage.setItem("userEmail", email.value);
 		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
+	*/
 });
