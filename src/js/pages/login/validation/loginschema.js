@@ -43,6 +43,7 @@ password.addEventListener("input", () => {
 });
 
 loginButton.addEventListener("click", async () => {
+	alertUserEmail.innerHTML = "";
 	const verifyFiels = () => {
 		const inputValues = {
 			email: email.value,
