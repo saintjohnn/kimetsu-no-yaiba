@@ -42,9 +42,7 @@ password.addEventListener("input", () => {
 	);
 });
 
-loginButton.addEventListener("click", async (event) => {
-	event.preventDefault();
-
+loginButton.addEventListener("click", async () => {
 	const verifyFiels = () => {
 		const inputValues = {
 			email: email.value,
@@ -74,61 +72,30 @@ loginButton.addEventListener("click", async (event) => {
 		const registeredAccountData = await fetch("http://localhost:3000/users");
 		const parsedRegisteredAccountData = await registeredAccountData.json();
 
-		const checkEmail = parsedRegisteredAccountData.some(
+		const userData = parsedRegisteredAccountData.find(
 			(data) => email.value === data.email,
 		);
 
-		if (!checkEmail && email.value.length > 0) {
+		if (!userData) {
 			alertUserEmail.innerHTML = "este email não existe";
-			return false;
+			return null;
 		} else {
 			alertUserEmail.innerHTML = "";
-			return true;
+			return userData;
 		}
 	};
 
-	const registeredPasswords = async () => {
-		const registeredPasswordsData = await fetch("http://localhost:3000/users");
-		const parsedregisteredPasswordsData = await registeredPasswordsData.json();
+	const user = await registeredAccounts();
 
-		const checkPassword = parsedregisteredPasswordsData.some((datas) => {
-			if (email.value === datas.email) {
-				bcryptjs.compareSync(password.value, datas.password);
-			}
-		});
+	if (user) {
+		const checkPassword = bcryptjs.compareSync(password.value, user.password);
 
-		if (!checkPassword && password.value.length > 0 && email.value.length > 1) {
+		if (!checkPassword) {
 			alertUserPassword.innerHTML = "senha incorreta";
-			return false;
 		} else {
 			alertUserPassword.innerHTML = "";
-			return true;
+			localStorage.setItem("userEmail", email.value);
+			location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 		}
-	};
-
-	const emailIsValid = await registeredAccounts();
-	const passwordIsValid = await registeredPasswords();
-
-	if (emailIsValid && passwordIsValid) {
-		localStorage.setItem("userEmail", email.value);
-		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
 	}
-
-	/*
-	await registeredAccounts();
-	await registeredPasswords();
-	verifyFiels();
-	*/
-	/*
-	if (
-		alertMessageEmptyFields.innerHTML === "" &&
-		alertMessageEmail.innerHTML === "" &&
-		alertMessagePassword.innerHTML === "" &&
-		alertUserEmail.innerHTML === "" &&
-		alertUserPassword.innerHTML === ""
-	) {
-		localStorage.setItem("userEmail", email.value);
-		location.href = "https://saintjohnn.github.io/kimetsu-no-yaiba/";
-	}
-	*/
 });

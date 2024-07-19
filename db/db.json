@@ -23,6 +23,30 @@
       "username": "ddd",
       "email": "kickback@gmail.com",
       "password": "$2a$10$hYTq1IUjvwyX5INXcUmSL.z2jV87YMW6HdWJ3HND40fxNfgaVrHcq"
+    },
+    {
+      "id": "a1a5164c-47fe-464f-8373-2505938cf570",
+      "username": "kny",
+      "email": "kny@gmail.com",
+      "password": "$2a$10$c2LjXEWxv6mmoIf/HnJ6ReQm0JrhzTHvB1OfiKXIBbn4aJxAQ3hgG"
+    },
+    {
+      "id": "b5ef1fa5-e5bb-4740-9ae4-b861f583b64e",
+      "username": "check",
+      "email": "check@gmail.com",
+      "password": "$2a$10$6yq9KTau.SMbkElDu61.0esVRME9BMH16dOLvrbRbLCc5FEVckOTq"
+    },
+    {
+      "id": "eec2b0d8-375b-4493-9c8e-48fac85e5c72",
+      "username": "rggsfdgewfds",
+      "email": "a@gmail.com",
+      "password": "$2a$10$jWMeuzEU5wTILCDPxuiabe0BKqUmyruiyF3/PLT5nYaqF7Om06OBS"
+    },
+    {
+      "id": "e14ee6f8-784e-4086-9566-1f6753c996a8",
+      "username": "dddd",
+      "email": "gdt@gmail.com",
+      "password": "$2a$10$l8RMa5jB0f8j/g.LO6NrwOmzSucEjSjDTRGWwDMIODZ4h5GP0JX92"
     }
   ]
 }
