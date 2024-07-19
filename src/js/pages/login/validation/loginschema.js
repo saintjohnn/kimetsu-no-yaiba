@@ -79,7 +79,7 @@ loginButton.addEventListener("click", async () => {
 
 		if (!userData) {
 			alertUserEmail.innerHTML = "este email não existe";
-			return null;
+			return;
 		} else {
 			alertUserEmail.innerHTML = "";
 			return userData;
