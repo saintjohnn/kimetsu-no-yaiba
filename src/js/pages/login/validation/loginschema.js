@@ -68,11 +68,9 @@ loginButton.addEventListener("click", async () => {
 
 	const registeredAccounts = async () => {
 		const registeredAccountData = await fetch("http://localhost:3000/users");
-		const parsedRegisteredAccountData = await registeredAccountData.json();
+		const parsedData = await registeredAccountData.json();
 
-		const userData = parsedRegisteredAccountData.find(
-			(data) => email.value === data.email,
-		);
+		const userData = parsedData.find((data) => email.value === data.email);
 
 		if (!userData) {
 			alertUserEmail.innerHTML = "este email não existe";
