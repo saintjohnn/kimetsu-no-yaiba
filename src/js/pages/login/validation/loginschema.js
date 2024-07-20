@@ -61,9 +61,6 @@ loginButton.addEventListener("click", async () => {
 			alertMessageEmptyFields.innerHTML =
 				"preencha todos os campos antes do envio";
 			return false;
-		} else {
-			alertMessageEmptyFields.innerHTML = "";
-			return true;
 		}
 	};
 
@@ -80,9 +77,6 @@ loginButton.addEventListener("click", async () => {
 		if (!userData) {
 			alertUserEmail.innerHTML = "este email não existe";
 			return;
-		} else {
-			alertUserEmail.innerHTML = "";
-			return userData;
 		}
 	};
 

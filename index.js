@@ -55,9 +55,9 @@ if (localStorage.getItem("dark")) {
 }
 
 function setDisplay(elements, displayStyle) {
-	elements.forEach((element) => {
-		element.style.display = displayStyle;
-	});
+	for (const modifyElements of elements) {
+		modifyElements.style.display = displayStyle;
+	}
 }
 
 function checkUsernameTextLength() {
