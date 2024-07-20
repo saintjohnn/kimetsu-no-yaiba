@@ -83,7 +83,9 @@ if (localStorage.getItem("userEmail")) {
 					checkUsernameTextLength();
 				}
 			});
-		} catch (error) {}
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	userLoginData();

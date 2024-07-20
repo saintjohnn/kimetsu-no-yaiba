@@ -325,12 +325,14 @@ body{
     border-bottom-left-radius: 10px;
     margin-right: 0;
     top: 0;
+    overflow-y: auto;
     right: -100%;
     border: 1px solid;
     border-color: inherit;
     color: inherit;
     transition: right .5s;
   }
+ 
   .btn-login, .btn-username{
     position: absolute;
     margin: 10px 0 0 10px;
@@ -377,6 +379,7 @@ body{
   }
   .header__navigation-item{
     font-weight: 900;
+    position: static;
   }
   .header__navigation-element{
     backdrop-filter: blur(2px);

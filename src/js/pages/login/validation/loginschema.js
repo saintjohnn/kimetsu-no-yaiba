@@ -62,25 +62,30 @@ loginButton.addEventListener("click", async () => {
 				"preencha todos os campos antes do envio";
 			return false;
 		}
+
+		alertMessageEmptyFields.innerHTML = "";
+		return true;
 	};
 
 	if (!verifyFiels()) return;
 
 	const registeredAccounts = async () => {
 		const registeredAccountData = await fetch("http://localhost:3000/users");
-		const parsedRegisteredAccountData = await registeredAccountData.json();
+		const parsedData = await registeredAccountData.json();
 
-		const userData = parsedRegisteredAccountData.find(
-			(data) => email.value === data.email,
-		);
+		const userData = parsedData.find((data) => email.value === data.email);
 
 		if (!userData) {
 			alertUserEmail.innerHTML = "este email não existe";
 			return;
 		}
+
+		alertUserEmail.innerHTML = "";
+		return userData;
 	};
 
 	const user = await registeredAccounts();
+	console.log(user);
 
 	if (user) {
 		const checkPassword = bcryptjs.compareSync(password.value, user.password);

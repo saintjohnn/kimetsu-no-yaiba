@@ -43,9 +43,9 @@ username.addEventListener("input", () => {
 		.min(1, "preencha este campo")
 		.regex(
 			/^[a-zA-Z0-9çÇ]+$/,
-			"não é permitido caracteres especiais, caracteres acentuados e espaçamentos como nome de usuário",
+			"não são permitidos espaçamentos, caracteres especiais ou acentuados no nome de usuário",
 		)
-		.regex(/^[^\d]+$/, "não é permitido números como nome de usuário")
+		.regex(/^[^\d]+$/, "não são permitidos números como nome de usuário")
 		.min(2, "nome de usuário deve ter no mínimo 2 caracteres")
 		.max(30, "nome de usuário deve ter no máximo 30 caracteres");
 
@@ -70,7 +70,7 @@ password.addEventListener("input", () => {
 		.min(1, "preencha este campo")
 		.regex(
 			/^[a-zA-Z0-9çÇ]+$/,
-			"não é permitido caracteres especiais, caracteres acentuados e espaçamentos como senha",
+			"não são permitidos espaçamentos, caracteres especiais ou acentuados como senha",
 		)
 		.min(6, "senha deve ter no mínimo 6 caracteres")
 		.refine(
@@ -118,7 +118,7 @@ confirmPassword.addEventListener("input", () => {
 		.min(1, "preencha este campo")
 		.regex(
 			/^[a-zA-Z0-9çÇ]+$/,
-			"não é permitido caracteres especiais, caracteres acentuados e espaçamentos como senha",
+			"não são permitidos espaçamentos, caracteres especiais ou acentuados como senha",
 		)
 		.refine((value) => value === password.value, {
 			message: "as senhas devem ser iguais",
@@ -155,7 +155,6 @@ submitButton.addEventListener("click", async (event) => {
 		alertMessageAgree.classList.add("input-container__user-input__alert-agree");
 		alertMessageAgree.innerHTML =
 			"você deve concordar com os termos de serviço e política de privacidade";
-		event.preventDefault();
 	} else {
 		alertMessageAgree.innerHTML = "";
 	}
