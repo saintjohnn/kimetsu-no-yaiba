@@ -4,7 +4,7 @@ export default function validateSchemas(
 	alertMessage,
 	inputContainer,
 ) {
-	const validate = schema.safeParse(inputName[value]);
+	const validate = schema.safeParse(inputName.value);
 
 	if (validate.success === false) {
 		alertMessage.style.display = "inline";
